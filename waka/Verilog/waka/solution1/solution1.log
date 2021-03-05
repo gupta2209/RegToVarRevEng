@@ -1,0 +1,66 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hls_macc.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 185.656 ; gain = 93.238
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 185.656 ; gain = 93.238
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 185.656 ; gain = 93.238
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 185.656 ; gain = 93.238
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hls_macc.c:17:3) in function 'hls_macc'... converting 4 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.656 ; gain = 93.238
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.656 ; gain = 93.238
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'hls_macc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'hls_macc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 8.765 seconds; current allocated memory: 100.447 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.054 seconds; current allocated memory: 100.654 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hls_macc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in17' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in19' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in20' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in22' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in24' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in27' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in28' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in29' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/in32' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/out13' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/out30' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hls_macc/out31' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'hls_macc' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hls_macc'.
+INFO: [HLS 200-111]  Elapsed time: 0.141 seconds; current allocated memory: 100.962 MB.
+INFO: [HLS 200-789] **** Estimated Fmax: 114.39 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 185.656 ; gain = 93.238
+INFO: [VHDL 208-304] Generating VHDL RTL for hls_macc.
+INFO: [VLOG 209-307] Generating Verilog RTL for hls_macc.
+INFO: [HLS 200-112] Total elapsed time: 10.936 seconds; peak allocated memory: 100.962 MB.

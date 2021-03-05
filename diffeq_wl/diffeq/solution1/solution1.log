@@ -1,0 +1,139 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'diffeq.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 185.535 ; gain = 93.273
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 185.535 ; gain = 93.273
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.535 ; gain = 93.273
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.535 ; gain = 93.273
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.535 ; gain = 93.273
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.535 ; gain = 93.273
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'diffeq' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'diffeq' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 9.18 seconds; current allocated memory: 99.904 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.056 seconds; current allocated memory: 100.025 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'diffeq' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/dx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/u' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/a' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'diffeq' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'diffeq/a' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'diffeq'.
+INFO: [HLS 200-111]  Elapsed time: 0.101 seconds; current allocated memory: 100.221 MB.
+INFO: [HLS 200-789] **** Estimated Fmax: 117.51 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 185.535 ; gain = 93.273
+INFO: [VHDL 208-304] Generating VHDL RTL for diffeq.
+INFO: [VLOG 209-307] Generating Verilog RTL for diffeq.
+INFO: [HLS 200-112] Total elapsed time: 10.736 seconds; peak allocated memory: 100.221 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'diffeq.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 185.754 ; gain = 93.418
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 185.754 ; gain = 93.418
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.754 ; gain = 93.418
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.754 ; gain = 93.418
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.754 ; gain = 93.418
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.754 ; gain = 93.418
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'diffeq' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'diffeq' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 8.987 seconds; current allocated memory: 99.862 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.054 seconds; current allocated memory: 99.981 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'diffeq' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/dx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/u' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'diffeq' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'diffeq'.
+INFO: [HLS 200-111]  Elapsed time: 0.076 seconds; current allocated memory: 100.206 MB.
+INFO: [HLS 200-789] **** Estimated Fmax: 117.51 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 185.754 ; gain = 93.418
+INFO: [VHDL 208-304] Generating VHDL RTL for diffeq.
+INFO: [VLOG 209-307] Generating Verilog RTL for diffeq.
+INFO: [HLS 200-112] Total elapsed time: 10.469 seconds; peak allocated memory: 100.206 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'diffeq.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 186.652 ; gain = 94.309
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 186.652 ; gain = 94.309
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 186.652 ; gain = 94.309
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 186.652 ; gain = 94.309
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 186.652 ; gain = 94.309
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 186.652 ; gain = 94.309
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'diffeq' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'diffeq' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 13.082 seconds; current allocated memory: 99.898 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.076 seconds; current allocated memory: 100.017 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'diffeq' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/dx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/u' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'diffeq/y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'diffeq' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'diffeq'.
+INFO: [HLS 200-111]  Elapsed time: 0.148 seconds; current allocated memory: 100.239 MB.
+INFO: [HLS 200-789] **** Estimated Fmax: 117.51 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 186.652 ; gain = 94.309
+INFO: [VHDL 208-304] Generating VHDL RTL for diffeq.
+INFO: [VLOG 209-307] Generating Verilog RTL for diffeq.
+INFO: [HLS 200-112] Total elapsed time: 15.17 seconds; peak allocated memory: 100.239 MB.

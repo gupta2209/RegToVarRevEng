@@ -1,0 +1,202 @@
+
+
+================================================================
+== Vivado HLS Report for 'hls_macc'
+================================================================
+* Date:           Fri Feb 19 19:11:28 2021
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        hls_macc
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.742 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        4|        4| 40.000 ns | 40.000 ns |    4|    4|   none  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.51>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%in10_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in10) nounwind" [motion_return.c:4]   --->   Operation 6 'read' 'in10_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%in7_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in7) nounwind" [motion_return.c:4]   --->   Operation 7 'read' 'in7_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%in4_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in4) nounwind" [motion_return.c:4]   --->   Operation 8 'read' 'in4_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (8.51ns)   --->   "%add3 = mul i32 %in7_read, %in4_read" [motion_return.c:25]   --->   Operation 9 'mul' 'add3' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (8.51ns)   --->   "%add5 = mul i32 %in10_read, %in10_read" [motion_return.c:27]   --->   Operation 10 'mul' 'add5' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 8.51>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%in9_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in9) nounwind" [motion_return.c:4]   --->   Operation 11 'read' 'in9_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%in6_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in6) nounwind" [motion_return.c:4]   --->   Operation 12 'read' 'in6_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%in3_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in3) nounwind" [motion_return.c:4]   --->   Operation 13 'read' 'in3_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%in2_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in2) nounwind" [motion_return.c:4]   --->   Operation 14 'read' 'in2_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%in1_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in1) nounwind" [motion_return.c:4]   --->   Operation 15 'read' 'in1_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (8.51ns)   --->   "%mult2 = mul nsw i32 %in3_read, %in1_read" [motion_return.c:8]   --->   Operation 16 'mul' 'mult2' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (8.51ns)   --->   "%mult10 = mul nsw i32 %in9_read, %in6_read" [motion_return.c:17]   --->   Operation 17 'mul' 'mult10' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (2.55ns)   --->   "%tmp = add i32 %in2_read, %add3" [motion_return.c:4]   --->   Operation 18 'add' 'tmp' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (2.55ns)   --->   "%tmp6 = add i32 %in7_read, %add5" [motion_return.c:4]   --->   Operation 19 'add' 'tmp6' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 8.51>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%in8_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in8) nounwind" [motion_return.c:4]   --->   Operation 20 'read' 'in8_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%in5_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in5) nounwind" [motion_return.c:4]   --->   Operation 21 'read' 'in5_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (8.51ns)   --->   "%mult7 = mul nsw i32 %in6_read, %in3_read" [motion_return.c:14]   --->   Operation 22 'mul' 'mult7' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 23 [1/1] (8.51ns)   --->   "%mult11 = mul nsw i32 %in8_read, %in6_read" [motion_return.c:18]   --->   Operation 23 'mul' 'mult11' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (8.51ns)   --->   "%mult13 = mul nsw i32 %in8_read, %in7_read" [motion_return.c:20]   --->   Operation 24 'mul' 'mult13' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (8.51ns)   --->   "%mul_ln24 = mul i32 %in5_read, %in4_read" [motion_return.c:24]   --->   Operation 25 'mul' 'mul_ln24' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (2.55ns)   --->   "%add_ln30 = add i32 %in2_read, %mult2" [motion_return.c:30]   --->   Operation 26 'add' 'add_ln30' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (8.51ns)   --->   "%tmp3 = mul i32 %in5_read, %tmp" [motion_return.c:4]   --->   Operation 27 'mul' 'tmp3' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (2.55ns)   --->   "%tmp4 = add i32 %in7_read, %in2_read" [motion_return.c:4]   --->   Operation 28 'add' 'tmp4' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 29 [1/1] (2.55ns)   --->   "%add_ln42 = add i32 %in8_read, %mult10" [motion_return.c:42]   --->   Operation 29 'add' 'add_ln42' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 30 [1/1] (8.51ns)   --->   "%tmp7 = mul i32 %in9_read, %tmp6" [motion_return.c:4]   --->   Operation 30 'mul' 'tmp7' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 8.51>
+ST_4 : Operation 31 [1/1] (8.51ns)   --->   "%add2 = mul i32 %in4_read, %mul_ln24" [motion_return.c:24]   --->   Operation 31 'mul' 'add2' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 32 [1/1] (8.51ns)   --->   "%add6 = mul i32 %in1_read, %add_ln30" [motion_return.c:30]   --->   Operation 32 'mul' 'add6' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 33 [1/1] (2.55ns)   --->   "%add9 = add nsw i32 %tmp3, %mult7" [motion_return.c:37]   --->   Operation 33 'add' 'add9' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 34 [1/1] (8.51ns)   --->   "%tmp5 = mul i32 %in3_read, %tmp4" [motion_return.c:4]   --->   Operation 34 'mul' 'tmp5' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 35 [1/1] (8.51ns)   --->   "%add13 = mul i32 %in4_read, %add_ln42" [motion_return.c:42]   --->   Operation 35 'mul' 'add13' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 36 [1/1] (2.55ns)   --->   "%add14 = add nsw i32 %tmp7, %mult13" [motion_return.c:46]   --->   Operation 36 'add' 'add14' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%trunc_ln = call i29 @_ssdm_op_PartSelect.i29.i32.i32.i32(i32 %add14, i32 3, i32 31)" [motion_return.c:48]   --->   Operation 37 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 8.74>
+ST_5 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in1) nounwind, !map !7"   --->   Operation 38 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in2) nounwind, !map !13"   --->   Operation 39 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in3) nounwind, !map !17"   --->   Operation 40 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in4) nounwind, !map !21"   --->   Operation 41 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in5) nounwind, !map !25"   --->   Operation 42 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in6) nounwind, !map !29"   --->   Operation 43 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in7) nounwind, !map !33"   --->   Operation 44 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in8) nounwind, !map !37"   --->   Operation 45 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in9) nounwind, !map !41"   --->   Operation 46 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %in10) nounwind, !map !45"   --->   Operation 47 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %out1) nounwind, !map !49"   --->   Operation 48 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %out2) nounwind, !map !55"   --->   Operation 49 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %out3) nounwind, !map !59"   --->   Operation 50 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !63"   --->   Operation 51 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @hls_macc_str) nounwind"   --->   Operation 52 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %out1, i32 %add6) nounwind" [motion_return.c:31]   --->   Operation 53 'write' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%shf1 = shl i32 %add9, 3" [motion_return.c:39]   --->   Operation 54 'shl' 'shf1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln40_1 = add i32 %shf1, %tmp5" [motion_return.c:40]   --->   Operation 55 'add' 'add_ln40_1' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 56 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%add_ln40 = add i32 %add2, %add_ln40_1" [motion_return.c:40]   --->   Operation 56 'add' 'add_ln40' <Predicate = true> <Delay = 4.37> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %out2, i32 %add_ln40) nounwind" [motion_return.c:40]   --->   Operation 57 'write' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%shf2 = sext i29 %trunc_ln to i32" [motion_return.c:48]   --->   Operation 58 'sext' 'shf2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 59 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln49_1 = add i32 %shf2, %add13" [motion_return.c:49]   --->   Operation 59 'add' 'add_ln49_1' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 60 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%add_ln49 = add i32 %mult11, %add_ln49_1" [motion_return.c:49]   --->   Operation 60 'add' 'add_ln49' <Predicate = true> <Delay = 4.37> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %out3, i32 %add_ln49) nounwind" [motion_return.c:49]   --->   Operation 61 'write' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln51 = add i32 %add_ln40, %add6" [motion_return.c:51]   --->   Operation 62 'add' 'add_ln51' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 63 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%add_ln51_1 = add i32 %add_ln49, %add_ln51" [motion_return.c:51]   --->   Operation 63 'add' 'add_ln51_1' <Predicate = true> <Delay = 4.37> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "ret i32 %add_ln51_1" [motion_return.c:51]   --->   Operation 64 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.51ns
+The critical path consists of the following:
+	wire read on port 'in10' (motion_return.c:4) [29]  (0 ns)
+	'mul' operation ('add5', motion_return.c:27) [47]  (8.51 ns)
+
+ <State 2>: 8.51ns
+The critical path consists of the following:
+	wire read on port 'in9' (motion_return.c:4) [30]  (0 ns)
+	'mul' operation ('mult10', motion_return.c:17) [41]  (8.51 ns)
+
+ <State 3>: 8.51ns
+The critical path consists of the following:
+	wire read on port 'in8' (motion_return.c:4) [31]  (0 ns)
+	'mul' operation ('mult11', motion_return.c:18) [42]  (8.51 ns)
+
+ <State 4>: 8.51ns
+The critical path consists of the following:
+	'mul' operation ('add2', motion_return.c:24) [45]  (8.51 ns)
+
+ <State 5>: 8.74ns
+The critical path consists of the following:
+	'shl' operation ('shf1', motion_return.c:39) [54]  (0 ns)
+	'add' operation ('add_ln40_1', motion_return.c:40) [57]  (0 ns)
+	'add' operation ('add_ln40', motion_return.c:40) [58]  (4.37 ns)
+	'add' operation ('add_ln51', motion_return.c:51) [70]  (0 ns)
+	'add' operation ('add_ln51_1', motion_return.c:51) [71]  (4.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

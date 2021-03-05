@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="findmin8.c" path="C:\Users\vivek\Music\parker\findmin8.c"/>
+    <originFiles name="main.c" path="C:\Users\vivek\Music\parker\main.c"/>
+    <originFiles name="parker.c" path="C:\Users\vivek\Music\parker\parker.c"/>
+    <originFiles name="tlc.c" path="C:\Users\vivek\Music\parker\tlc.c"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

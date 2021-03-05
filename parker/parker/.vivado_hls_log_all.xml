@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-40] In file included from tlc.c:1:&#xD;&#xA;tlc.c:55:16: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]&#xD;&#xA;    if(timeOutS=1)&#xD;&#xA;       ~~~~~~~~^~&#xD;&#xA;tlc.c:55:16: note: place parentheses around the assignment to silence this warning&#xD;&#xA;    if(timeOutS=1)&#xD;&#xA;               ^&#xD;&#xA;       (         )&#xD;&#xA;tlc.c:55:16: note: use '==' to turn this assignment into an equality comparison&#xD;&#xA;    if(timeOutS=1)&#xD;&#xA;               ^&#xD;&#xA;               ==&#xD;&#xA;1 warning generated." projectName="parker" solutionName="solution1" date="2021-01-06T14:00:19.495+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

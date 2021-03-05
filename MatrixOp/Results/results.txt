@@ -1,0 +1,72 @@
+In state2 there are 2 initialization i_0 and j_0 with zero(same value) so we are not getting the mapping.
+state1:
+i_0_reg_139 == ::i_0
+(All done)
+
+state2:
+sub_ln12_reg_609 == ::sub_ln12
+(AD)
+
+state3:
+res1_addr_reg_628 == ::sext_ln10
+(AD)
+
+state4:
+mapping for the mat2_address0 and mat1_address0 is not found 
+But found using Mealy model
+
+state5:
+mat1_load not map to mat1_load_reg_651 instead maps to mat1_q0__temp
+mat2_load not map to mat2_load_reg_656 instead maps to mat2_q0__temp 
+
+state6:
+::mul_ln12_reg_661 == ::mul_ln12
+(AD)
+
+state7:
+::res1_load_1_reg_161 == ::add_ln12
+(AD)
+
+state8:
+::sub_ln18_reg_679 == ::sub_ln18
+(AD)
+
+state9:
+sext_ln18_reg_692 == ::add_ln18
+::sext_ln18_reg_692 == ::sext_ln18
+(AD)
+
+state10:
+j_1_reg_196 == ::j_1
+::j_1_reg_196 == ::j
+(AD)
+
+state11:
+sub_ln25_reg_710 == ::sub_ln25
+i_3_reg_229 == ::j_2
+::i_3_reg_229 == ::i_3
+(AD) initalization
+
+state12:
+res_addr_1_reg_723 == ::sext_ln25
+(AD)
+
+state13:
+add_ln25_1_reg_738 == ::add_ln25_1
+(AD)
+
+state14:
+j_2_reg_218 == ::j_5
+::j_2_reg_218 == ::j_2
+(AD)
+
+state15:
+i_6_reg_746 == ::i_6
+sub_ln30 mapping not found
+
+state16:
+add_ln30 mapping not found
+
+state17:
+add_ln30_1_reg_774 == ::sext_ln30_1
+

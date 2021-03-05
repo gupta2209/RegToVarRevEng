@@ -1,0 +1,854 @@
+Daikon version 5.8.4, released July 22, 2020; http://plse.cs.washington.edu/daikon.
+Reading declaration files .(read 1 decls file)
+Processing trace data; reading 1 dtrace file:
+
+===========================================================================
+..main():::ENTER
+::ap_return == ::in1
+::ap_return == ::in2
+::ap_return == ::in3
+::ap_return == ::in4
+::ap_return == ::in5
+::ap_return == ::in6
+::ap_return == ::t6_6_reg_231
+::ap_return == ::sub_ln21
+::ap_return == ::icmp_ln21
+::ap_return == ::icmp_ln31
+::ap_return == ::t6_3
+::ap_return == ::t6_4
+::ap_return == ::t6_5
+::ap_return == ::t4
+::ap_return == ::icmp_ln24
+::ap_return == ::t4_1
+::ap_return == ::t4_2
+::ap_return == ::t4_3
+::ap_return == ::t4_4
+::ap_return == ::t6_6
+::ap_return == ::icmp_ln19
+::ap_return == ::icmp_ln41
+::ap_return == ::t6
+::ap_return == ::t6_1
+::ap_return == ::t6_2
+::ap_return == ::t6_7
+::ap_return == ::icmp_ln46
+::ap_return == ::out1
+::ap_return == ::out1_1
+::ap_return == ::out1_2
+::ap_return == ::zero
+::ap_clk == 0
+::ap_done == 0
+::ap_idle == 0
+::ap_ready == 0
+::ap_return == 0
+::ap_rst == 0
+::ap_start == 0
+::ap_CS_fsm_state1 == 0
+::ap_CS_fsm_state2 == 0
+::ap_CS_fsm == 0
+::ap_NS_fsm == 0
+===========================================================================
+..main():::EXIT
+::ap_idle == orig(::ap_idle)
+::ap_return == ::t6_3
+::ap_return == ::t6_5
+::ap_return == ::out1
+::ap_return == ::out1_2
+::ap_rst == orig(::ap_rst)
+::in1 == ::t4
+::in2 == ::in4
+::in3 == ::in5
+::in6 == ::t6_4
+::ap_CS_fsm_state1 == orig(::ap_CS_fsm_state1)
+::ap_CS_fsm == orig(::ap_CS_fsm)
+::ap_NS_fsm == orig(::ap_NS_fsm)
+::t6_6_reg_231 == ::t6_6
+::t6_6_reg_231 == ::t6_7
+::icmp_ln21 == ::icmp_ln31
+::icmp_ln21 == ::icmp_ln24
+::icmp_ln21 == ::t4_2
+::icmp_ln21 == ::icmp_ln19
+::icmp_ln21 == ::icmp_ln41
+::icmp_ln21 == ::t6
+::icmp_ln21 == ::t6_2
+::icmp_ln21 == ::icmp_ln46
+::icmp_ln21 == ::zero
+::icmp_ln21 == orig(::ap_return)
+::icmp_ln21 == orig(::in1)
+::icmp_ln21 == orig(::in2)
+::icmp_ln21 == orig(::in3)
+::icmp_ln21 == orig(::in4)
+::icmp_ln21 == orig(::in5)
+::icmp_ln21 == orig(::in6)
+::icmp_ln21 == orig(::t6_6_reg_231)
+::icmp_ln21 == orig(::sub_ln21)
+::icmp_ln21 == orig(::icmp_ln21)
+::icmp_ln21 == orig(::icmp_ln31)
+::icmp_ln21 == orig(::t6_3)
+::icmp_ln21 == orig(::t6_4)
+::icmp_ln21 == orig(::t6_5)
+::icmp_ln21 == orig(::t4)
+::icmp_ln21 == orig(::icmp_ln24)
+::icmp_ln21 == orig(::t4_1)
+::icmp_ln21 == orig(::t4_2)
+::icmp_ln21 == orig(::t4_3)
+::icmp_ln21 == orig(::t4_4)
+::icmp_ln21 == orig(::t6_6)
+::icmp_ln21 == orig(::icmp_ln19)
+::icmp_ln21 == orig(::icmp_ln41)
+::icmp_ln21 == orig(::t6)
+::icmp_ln21 == orig(::t6_1)
+::icmp_ln21 == orig(::t6_2)
+::icmp_ln21 == orig(::t6_7)
+::icmp_ln21 == orig(::icmp_ln46)
+::icmp_ln21 == orig(::out1)
+::icmp_ln21 == orig(::out1_1)
+::icmp_ln21 == orig(::out1_2)
+::icmp_ln21 == orig(::zero)
+::t4_1 == ::t4_3
+::t4_1 == ::t4_4
+::ap_clk == 1
+::ap_done == 1
+::ap_idle == 0
+::ap_ready == 1
+::ap_return == -9
+::ap_rst == 0
+::ap_start == 1
+::in1 == -4
+::in2 == -5
+::in3 == -2
+::in6 == 5
+::ap_CS_fsm_state1 == 0
+::ap_CS_fsm_state2 == 1
+::ap_CS_fsm == 0
+::ap_NS_fsm == 0
+::t6_6_reg_231 == -6
+::sub_ln21 == 2
+::icmp_ln21 == 0
+::t4_1 == -1
+::t6_1 == 13
+::out1_1 == 6
+return == 0
+===========================================================================
+..parker():::ENTER
+::ap_return == ::out1_2
+::t6_6_reg_231 == ::t6_6
+::ap_clk one of { 0, 1 }
+::ap_done one of { 0, 1 }
+::ap_idle == 0
+::ap_ready one of { 0, 1 }
+::ap_rst == 0
+::ap_start one of { 0, 1 }
+::ap_CS_fsm_state1 == 0
+::ap_CS_fsm_state2 one of { 0, 1 }
+::ap_CS_fsm == 0
+::ap_NS_fsm == 0
+::icmp_ln21 one of { 0, 1 }
+::icmp_ln31 one of { 0, 1 }
+::icmp_ln24 one of { 0, 1 }
+::icmp_ln19 one of { 0, 1 }
+::icmp_ln41 one of { 0, 1 }
+::icmp_ln46 one of { 0, 1 }
+::zero == 0
+ap_clk__1 has only one value
+ap_clk__1 != null
+ap_clk__1[] == [1]
+ap_clk__1[] elements == 1
+ap_done__1 has only one value
+ap_done__1 != null
+ap_done__1[] == [0]
+ap_done__1[] elements == 0
+ap_idle__1 has only one value
+ap_idle__1 != null
+ap_idle__1[] == [0]
+ap_idle__1[] elements == 0
+ap_ready__1 has only one value
+ap_ready__1 != null
+ap_ready__1[] == [1]
+ap_ready__1[] elements == 1
+ap_return__1 has only one value
+ap_return__1 != null
+ap_return__1[] == [0]
+ap_return__1[] elements == 0
+ap_rst__1 has only one value
+ap_rst__1 != null
+ap_rst__1[] == [0]
+ap_rst__1[] elements == 0
+ap_start__1 has only one value
+ap_start__1 != null
+ap_start__1[] == [1]
+ap_start__1[] elements == 1
+in1__1 has only one value
+in1__1 != null
+in2__1 has only one value
+in2__1 != null
+in3__1 has only one value
+in3__1 != null
+in4__1 has only one value
+in4__1 != null
+in5__1 has only one value
+in5__1 != null
+in6__1 has only one value
+in6__1 != null
+dummy == 1
+::ap_idle in ap_done__1[]
+ap_done__1[] elements == ::ap_idle
+::ap_idle in ap_idle__1[]
+ap_idle__1[] elements == ::ap_idle
+::ap_idle in ap_return__1[]
+ap_return__1[] elements == ::ap_idle
+::ap_idle in ap_rst__1[]
+ap_rst__1[] elements == ::ap_idle
+::ap_return >= ::out1
+::ap_rst in ap_done__1[]
+ap_done__1[] elements == ::ap_rst
+::ap_rst in ap_idle__1[]
+ap_idle__1[] elements == ::ap_rst
+::ap_rst in ap_return__1[]
+ap_return__1[] elements == ::ap_rst
+::ap_rst in ap_rst__1[]
+ap_rst__1[] elements == ::ap_rst
+::in1 >= ::out1
+::in2 + ::t6_4 == 0
+::in2 <= ::t4_1
+::in2 <= ::t6
+::in2 <= ::t6_2
+::in3 + ::sub_ln21 == 0
+::in5 <= ::out1_1
+::ap_CS_fsm_state1 in ap_done__1[]
+ap_done__1[] elements == ::ap_CS_fsm_state1
+::ap_CS_fsm_state1 in ap_idle__1[]
+ap_idle__1[] elements == ::ap_CS_fsm_state1
+::ap_CS_fsm_state1 in ap_return__1[]
+ap_return__1[] elements == ::ap_CS_fsm_state1
+::ap_CS_fsm_state1 in ap_rst__1[]
+ap_rst__1[] elements == ::ap_CS_fsm_state1
+::ap_CS_fsm in ap_done__1[]
+ap_done__1[] elements == ::ap_CS_fsm
+::ap_CS_fsm in ap_idle__1[]
+ap_idle__1[] elements == ::ap_CS_fsm
+::ap_CS_fsm in ap_return__1[]
+ap_return__1[] elements == ::ap_CS_fsm
+::ap_CS_fsm in ap_rst__1[]
+ap_rst__1[] elements == ::ap_CS_fsm
+::ap_NS_fsm in ap_done__1[]
+ap_done__1[] elements == ::ap_NS_fsm
+::ap_NS_fsm in ap_idle__1[]
+ap_idle__1[] elements == ::ap_NS_fsm
+::ap_NS_fsm in ap_return__1[]
+ap_return__1[] elements == ::ap_NS_fsm
+::ap_NS_fsm in ap_rst__1[]
+ap_rst__1[] elements == ::ap_NS_fsm
+::icmp_ln21 >= ::zero
+::icmp_ln31 >= ::zero
+::icmp_ln24 >= ::zero
+::t4_1 >= ::t4_3
+::t4_1 <= ::t6
+::t4_3 <= ::t6
+::icmp_ln19 >= ::zero
+::icmp_ln41 >= ::zero
+::icmp_ln46 >= ::zero
+::zero in ap_done__1[]
+ap_done__1[] elements == ::zero
+::zero in ap_idle__1[]
+ap_idle__1[] elements == ::zero
+::zero in ap_return__1[]
+ap_return__1[] elements == ::zero
+::zero in ap_rst__1[]
+ap_rst__1[] elements == ::zero
+ap_clk__1[] elements == dummy
+dummy in ap_clk__1[]
+ap_ready__1[] elements == dummy
+dummy in ap_ready__1[]
+ap_start__1[] elements == dummy
+dummy in ap_start__1[]
+::in1 + ::in2 - ::t6_3 == 0
+::in1 - ::t6_3 - ::t6_4 == 0
+::in2 - 5 * ::t4_1 + 4 * ::t6 == 0
+::in3 - ::in5 - ::t4_2 == 0
+::in4 - ::t6_6_reg_231 + ::t4_4 == 0
+::in4 - ::t6_5 + ::t4 == 0
+::in5 + ::sub_ln21 + ::t4_2 == 0
+::t6_3 - ::t6 - ::out1 == 0
+::t6_4 + 5 * ::t4_1 - 4 * ::t6 == 0
+===========================================================================
+..parker():::EXIT
+::ap_idle == orig(::ap_idle)
+::ap_return == ::out1_2
+::ap_rst == orig(::ap_rst)
+::ap_CS_fsm_state1 == orig(::ap_CS_fsm_state1)
+::ap_CS_fsm == orig(::ap_CS_fsm)
+::ap_NS_fsm == orig(::ap_NS_fsm)
+::t6_6_reg_231 == ::t6_6
+::zero == orig(::zero)
+ap_clk__1[] == orig(ap_clk__1[])
+ap_idle__1[] == orig(ap_idle__1[])
+ap_ready__1[] == orig(ap_ready__1[])
+ap_rst__1[] == orig(ap_rst__1[])
+ap_start__1[] == orig(ap_start__1[])
+in1__1[] == orig(in1__1[])
+in2__1[] == orig(in2__1[])
+in3__1[] == orig(in3__1[])
+in4__1[] == orig(in4__1[])
+in5__1[] == orig(in5__1[])
+in6__1[] == orig(in6__1[])
+::ap_clk == 1
+::ap_done == 1
+::ap_idle == 0
+::ap_ready == 1
+::ap_rst == 0
+::ap_start == 1
+::ap_CS_fsm_state1 == 0
+::ap_CS_fsm_state2 == 1
+::ap_CS_fsm == 0
+::ap_NS_fsm == 0
+::icmp_ln21 one of { 0, 1 }
+::icmp_ln31 one of { 0, 1 }
+::icmp_ln24 one of { 0, 1 }
+::icmp_ln19 one of { 0, 1 }
+::icmp_ln41 one of { 0, 1 }
+::icmp_ln46 one of { 0, 1 }
+::zero == 0
+ap_clk__1[] == [1]
+ap_clk__1[] elements == 1
+ap_done__1[] == [1]
+ap_done__1[] elements == 1
+ap_idle__1[] == [0]
+ap_idle__1[] elements == 0
+ap_ready__1[] == [1]
+ap_ready__1[] elements == 1
+ap_rst__1[] == [0]
+ap_rst__1[] elements == 0
+ap_start__1[] == [1]
+ap_start__1[] elements == 1
+::ap_clk in ap_clk__1[]
+ap_clk__1[] elements == ::ap_clk
+::ap_clk in ap_done__1[]
+ap_done__1[] elements == ::ap_clk
+::ap_clk in ap_ready__1[]
+ap_ready__1[] elements == ::ap_clk
+::ap_clk in ap_start__1[]
+ap_start__1[] elements == ::ap_clk
+::ap_clk >= orig(::ap_clk)
+::ap_done in ap_clk__1[]
+ap_clk__1[] elements == ::ap_done
+::ap_done in ap_done__1[]
+ap_done__1[] elements == ::ap_done
+::ap_done in ap_ready__1[]
+ap_ready__1[] elements == ::ap_done
+::ap_done in ap_start__1[]
+ap_start__1[] elements == ::ap_done
+::ap_done >= orig(::ap_done)
+::ap_idle in ap_idle__1[]
+ap_idle__1[] elements == ::ap_idle
+::ap_idle in ap_rst__1[]
+ap_rst__1[] elements == ::ap_idle
+::ap_idle in orig(ap_done__1[])
+orig(ap_done__1[]) elements == ::ap_idle
+::ap_idle in orig(ap_return__1[])
+orig(ap_return__1[]) elements == ::ap_idle
+::ap_ready in ap_clk__1[]
+ap_clk__1[] elements == ::ap_ready
+::ap_ready in ap_done__1[]
+ap_done__1[] elements == ::ap_ready
+::ap_ready in ap_ready__1[]
+ap_ready__1[] elements == ::ap_ready
+::ap_ready in ap_start__1[]
+ap_start__1[] elements == ::ap_ready
+::ap_ready >= orig(::ap_ready)
+::ap_return != ::in1
+::ap_return >= ::out1
+::ap_return in ap_return__1[]
+ap_return__1[] elements == ::ap_return
+::ap_return != orig(::t4)
+::ap_return != orig(::out1_1)
+::ap_rst in ap_idle__1[]
+ap_idle__1[] elements == ::ap_rst
+::ap_rst in ap_rst__1[]
+ap_rst__1[] elements == ::ap_rst
+::ap_rst in orig(ap_done__1[])
+orig(ap_done__1[]) elements == ::ap_rst
+::ap_rst in orig(ap_return__1[])
+orig(ap_return__1[]) elements == ::ap_rst
+::ap_start in ap_clk__1[]
+ap_clk__1[] elements == ::ap_start
+::ap_start in ap_done__1[]
+ap_done__1[] elements == ::ap_start
+::ap_start in ap_ready__1[]
+ap_ready__1[] elements == ::ap_start
+::ap_start in ap_start__1[]
+ap_start__1[] elements == ::ap_start
+::ap_start >= orig(::ap_start)
+::in1 - ::out1 - 5 == 0
+::in1 in in1__1[]
+in1__1[] elements == ::in1
+::in1 != orig(::t6_1)
+::in2 + ::t6_4 == 0
+::in2 - ::t4_1 + 4 == 0
+::in2 != ::t4_3
+::in2 != ::t4_4
+::in2 - ::t6 + 5 == 0
+::in2 <= ::t6_2
+::in2 in in2__1[]
+in2__1[] elements == ::in2
+::in2 != orig(::t6_1)
+::in3 + ::sub_ln21 == 0
+::in3 != ::t4
+::in3 in in3__1[]
+in3__1[] elements == ::in3
+::in3 != orig(::t6_3)
+::in4 != ::icmp_ln31
+::in4 + ::t6_1 - 8 == 0
+::in4 in in4__1[]
+in4__1[] elements == ::in4
+::in4 != orig(::t6_4)
+::in5 != ::icmp_ln19
+::in5 - ::out1_1 + 8 == 0
+::in5 in in5__1[]
+in5__1[] elements == ::in5
+::in6 != ::icmp_ln41
+::in6 in in6__1[]
+in6__1[] elements == ::in6
+::in6 != orig(::t6_4)
+::in6 != orig(::t6_5)
+::ap_CS_fsm_state1 in ap_idle__1[]
+ap_idle__1[] elements == ::ap_CS_fsm_state1
+::ap_CS_fsm_state1 in ap_rst__1[]
+ap_rst__1[] elements == ::ap_CS_fsm_state1
+::ap_CS_fsm_state1 in orig(ap_done__1[])
+orig(ap_done__1[]) elements == ::ap_CS_fsm_state1
+::ap_CS_fsm_state1 in orig(ap_return__1[])
+orig(ap_return__1[]) elements == ::ap_CS_fsm_state1
+::ap_CS_fsm_state2 in ap_clk__1[]
+ap_clk__1[] elements == ::ap_CS_fsm_state2
+::ap_CS_fsm_state2 in ap_done__1[]
+ap_done__1[] elements == ::ap_CS_fsm_state2
+::ap_CS_fsm_state2 in ap_ready__1[]
+ap_ready__1[] elements == ::ap_CS_fsm_state2
+::ap_CS_fsm_state2 in ap_start__1[]
+ap_start__1[] elements == ::ap_CS_fsm_state2
+::ap_CS_fsm_state2 >= orig(::ap_CS_fsm_state2)
+::ap_CS_fsm in ap_idle__1[]
+ap_idle__1[] elements == ::ap_CS_fsm
+::ap_CS_fsm in ap_rst__1[]
+ap_rst__1[] elements == ::ap_CS_fsm
+::ap_CS_fsm in orig(ap_done__1[])
+orig(ap_done__1[]) elements == ::ap_CS_fsm
+::ap_CS_fsm in orig(ap_return__1[])
+orig(ap_return__1[]) elements == ::ap_CS_fsm
+::ap_NS_fsm in ap_idle__1[]
+ap_idle__1[] elements == ::ap_NS_fsm
+::ap_NS_fsm in ap_rst__1[]
+ap_rst__1[] elements == ::ap_NS_fsm
+::ap_NS_fsm in orig(ap_done__1[])
+orig(ap_done__1[]) elements == ::ap_NS_fsm
+::ap_NS_fsm in orig(ap_return__1[])
+orig(ap_return__1[]) elements == ::ap_NS_fsm
+::t6_6_reg_231 != ::t6_4
+::t6_6_reg_231 != ::t6_1
+::t6_6_reg_231 != ::icmp_ln46
+::t6_6_reg_231 != orig(::t6_4)
+::sub_ln21 != orig(::t6_6_reg_231)
+::sub_ln21 != orig(::t6_1)
+::icmp_ln21 >= ::zero
+::icmp_ln31 >= ::zero
+::t6_3 != ::t4
+::t6_3 != ::t4_3
+::t6_3 != ::t4_4
+::t6_3 != orig(::icmp_ln31)
+::t6_3 != orig(::t6_1)
+::t6_4 + ::t4_1 - 4 == 0
+::t6_4 != ::t6
+::t6_4 + ::t6 - 5 == 0
+::t6_4 != ::t6_1
+::t6_4 != ::t6_2
+::t6_4 != ::t6_7
+::t6_5 != ::t4_3
+::t6_5 != ::t4_4
+::t6_5 != orig(::icmp_ln31)
+::icmp_ln24 >= ::zero
+::t4_1 >= ::t4_3
+::t4_1 - ::t6 + 1 == 0
+::t4_1 != ::t6_2
+in2__1[] elements < ::t4_1
+::t4_2 != orig(::ap_return)
+::t4_2 != orig(::t6_6_reg_231)
+::t4_2 != orig(::t6_7)
+::t4_2 != orig(::out1)
+::t4_3 < ::t6
+::t4_3 != ::t6_2
+::t4_4 != ::t6
+::t4_4 != ::t6_2
+::icmp_ln19 >= ::zero
+::icmp_ln41 >= ::zero
+in2__1[] elements < ::t6
+in2__1[] elements <= ::t6_2
+::t6_7 != ::icmp_ln46
+::t6_7 != orig(::t6_4)
+::icmp_ln46 >= ::zero
+::out1 != ::out1_1
+ap_return__1[] elements >= ::out1
+in1__1[] elements > ::out1
+::out1 != orig(::t4)
+in5__1[] elements < ::out1_1
+::zero in ap_idle__1[]
+ap_idle__1[] elements == ::zero
+::zero in ap_rst__1[]
+ap_rst__1[] elements == ::zero
+::zero <= orig(::icmp_ln21)
+::zero <= orig(::icmp_ln31)
+::zero <= orig(::icmp_ln24)
+::zero <= orig(::icmp_ln19)
+::zero <= orig(::icmp_ln41)
+::zero <= orig(::icmp_ln46)
+::zero in orig(ap_done__1[])
+orig(ap_done__1[]) elements == ::zero
+::zero in orig(ap_return__1[])
+orig(ap_return__1[]) elements == ::zero
+ap_clk__1[] elements == orig(dummy)
+orig(dummy) in ap_clk__1[]
+ap_done__1[] > orig(ap_done__1[]) (elementwise)
+ap_done__1[] elements == orig(dummy)
+orig(dummy) in ap_done__1[]
+ap_ready__1[] elements == orig(dummy)
+orig(dummy) in ap_ready__1[]
+ap_start__1[] elements == orig(dummy)
+orig(dummy) in ap_start__1[]
+::in1 + ::in2 - ::t6_3 == 0
+::in1 - ::t6_3 - ::t6_4 == 0
+::in1 - ::t6_3 + ::t4_1 - 4 == 0
+::in1 - ::t6_3 + ::t6 - 5 == 0
+::in2 - ::t6_3 + ::out1 + 5 == 0
+::in3 - ::in5 - ::t4_2 == 0
+::in3 - ::t4_2 - ::out1_1 + 8 == 0
+::in4 - ::t6_6_reg_231 + ::t4_4 == 0
+::in4 - ::t6_5 + ::t4 == 0
+::in5 + ::sub_ln21 + ::t4_2 == 0
+::t6_6_reg_231 - ::t4_4 + ::t6_1 - 8 == 0
+::sub_ln21 + ::t4_2 + ::out1_1 - 8 == 0
+::t6_3 + ::t6_4 - ::out1 - 5 == 0
+::t6_3 - ::t4_1 - ::out1 - 1 == 0
+::t6_3 - ::t6 - ::out1 == 0
+::t6_5 - ::t4 + ::t6_1 - 8 == 0
+===========================================================================
+..state1():::ENTER
+::t6_6_reg_231 == ::zero
+::ap_clk == 1
+::ap_done == 0
+::ap_idle == 0
+::ap_ready == 1
+::ap_return == 0
+::ap_rst == 0
+::ap_start == 1
+::ap_CS_fsm_state1 == 1
+::ap_CS_fsm_state2 == 0
+::ap_CS_fsm == 0
+::ap_NS_fsm == 0
+::t6_6_reg_231 == 0
+::icmp_ln21 one of { 0, 1 }
+::icmp_ln31 one of { 0, 1 }
+::icmp_ln24 one of { 0, 1 }
+::icmp_ln19 one of { 0, 1 }
+::icmp_ln41 one of { 0, 1 }
+::icmp_ln46 one of { 0, 1 }
+::in1 != ::t6_1
+::in2 != ::t6_1
+::in3 != ::t6_3
+::in4 != ::t6_4
+::in6 != ::t6_4
+::in6 != ::t6_5
+::t6_6_reg_231 <= ::icmp_ln21
+::t6_6_reg_231 <= ::icmp_ln31
+::t6_6_reg_231 <= ::icmp_ln24
+::t6_6_reg_231 <= ::icmp_ln19
+::t6_6_reg_231 <= ::icmp_ln41
+::t6_6_reg_231 <= ::icmp_ln46
+::t4_1 >= ::t4_3
+::t4_1 <= ::t6
+::t4_3 <= ::t6
+::out1 <= ::out1_2
+::t6_3 - ::t6 - ::out1 == 0
+::t6_4 + 5 * ::t4_1 - 4 * ::t6 == 0
+===========================================================================
+..state1():::EXIT
+::ap_clk == orig(::ap_clk)
+::ap_done == orig(::ap_done)
+::ap_idle == orig(::ap_idle)
+::ap_ready == orig(::ap_ready)
+::ap_return == orig(::ap_return)
+::ap_rst == orig(::ap_rst)
+::ap_start == orig(::ap_start)
+::in1 == orig(::in1)
+::in2 == orig(::in2)
+::in3 == orig(::in3)
+::in4 == orig(::in4)
+::in5 == orig(::in5)
+::in6 == orig(::in6)
+::ap_CS_fsm_state1 == orig(::ap_CS_fsm_state1)
+::ap_CS_fsm_state2 == orig(::ap_CS_fsm_state2)
+::ap_CS_fsm == orig(::ap_CS_fsm)
+::ap_NS_fsm == orig(::ap_NS_fsm)
+::t6_6_reg_231 == ::t6_6
+::icmp_ln19 == orig(::icmp_ln19)
+::icmp_ln41 == orig(::icmp_ln41)
+::t6 == orig(::t6)
+::t6_1 == orig(::t6_1)
+::t6_2 == orig(::t6_2)
+::t6_7 == orig(::t6_7)
+::icmp_ln46 == orig(::icmp_ln46)
+::out1 == orig(::out1)
+::out1_1 == orig(::out1_1)
+::out1_2 == orig(::out1_2)
+::zero == orig(::t6_6_reg_231)
+::zero == orig(::zero)
+::ap_clk == 1
+::ap_done == 0
+::ap_idle == 0
+::ap_ready == 1
+::ap_return == 0
+::ap_rst == 0
+::ap_start == 1
+::ap_CS_fsm_state1 == 1
+::ap_CS_fsm_state2 == 0
+::ap_CS_fsm == 0
+::ap_NS_fsm == 0
+::icmp_ln21 one of { 0, 1 }
+::icmp_ln31 one of { 0, 1 }
+::icmp_ln24 one of { 0, 1 }
+::icmp_ln19 one of { 0, 1 }
+::icmp_ln41 one of { 0, 1 }
+::icmp_ln46 one of { 0, 1 }
+::zero == 0
+::in1 != ::t6_1
+::in2 + ::t6_4 == 0
+::in2 - ::t4_1 + 4 == 0
+::in2 != ::t4_3
+::in2 != ::t4_4
+::in2 != ::t6_1
+::in3 + ::sub_ln21 == 0
+::in3 != ::t4
+::in3 != orig(::t6_3)
+::in4 != ::icmp_ln31
+::in4 != orig(::t6_4)
+::in6 != orig(::t6_4)
+::in6 != orig(::t6_5)
+::t6_6_reg_231 != ::t6_4
+::t6_6_reg_231 != orig(::t6_4)
+::sub_ln21 != ::t6_1
+::sub_ln21 != orig(::t6_6)
+::icmp_ln21 >= ::zero
+::icmp_ln31 >= ::zero
+::t6_3 != ::t4
+::t6_3 != ::t4_3
+::t6_3 != ::t4_4
+::t6_3 != ::t6_1
+::t6_3 != orig(::icmp_ln31)
+::t6_4 + ::t4_1 - 4 == 0
+::t6_5 != ::t4_3
+::t6_5 != ::t4_4
+::t6_5 != orig(::icmp_ln31)
+::icmp_ln24 >= ::zero
+::t4_1 >= ::t4_3
+::t4_2 != ::t6_7
+::t4_2 != ::out1
+::t4_2 != ::out1_2
+::t4_2 != orig(::t6_6)
+::icmp_ln19 >= ::zero
+::icmp_ln41 >= ::zero
+::t6 >= orig(::t4_1)
+::t6 >= orig(::t4_3)
+::icmp_ln46 >= ::zero
+::out1 <= ::out1_2
+::zero <= orig(::icmp_ln21)
+::zero <= orig(::icmp_ln31)
+::zero <= orig(::icmp_ln24)
+::in1 + ::in2 - ::t6_3 == 0
+::in1 - ::t6_3 - ::t6_4 == 0
+::in1 - ::t6_3 + ::t4_1 - 4 == 0
+::in3 - ::in5 - ::t4_2 == 0
+::in4 - ::t6_6_reg_231 + ::t4_4 == 0
+::in4 - ::t6_5 + ::t4 == 0
+::in5 + ::sub_ln21 + ::t4_2 == 0
+::t6 + ::out1 - orig(::t6_3) == 0
+4 * ::t6 - orig(::t6_4) - 5 * orig(::t4_1) == 0
+===========================================================================
+..state2():::ENTER
+::ap_return == ::zero
+::t6_6_reg_231 == ::t6_6
+::ap_clk == 1
+::ap_done == 0
+::ap_idle == 0
+::ap_ready == 1
+::ap_return == 0
+::ap_rst == 0
+::ap_start == 1
+::ap_CS_fsm_state1 == 0
+::ap_CS_fsm_state2 == 1
+::ap_CS_fsm == 0
+::ap_NS_fsm == 0
+::icmp_ln21 one of { 0, 1 }
+::icmp_ln31 one of { 0, 1 }
+::icmp_ln24 one of { 0, 1 }
+::icmp_ln19 one of { 0, 1 }
+::icmp_ln41 one of { 0, 1 }
+::icmp_ln46 one of { 0, 1 }
+::ap_return <= ::icmp_ln21
+::ap_return <= ::icmp_ln31
+::ap_return <= ::icmp_ln24
+::ap_return <= ::icmp_ln19
+::ap_return <= ::icmp_ln41
+::ap_return <= ::icmp_ln46
+::in1 != ::t6_1
+::in2 + ::t6_4 == 0
+::in2 - ::t4_1 + 4 == 0
+::in2 != ::t4_3
+::in2 != ::t4_4
+::in2 != ::t6_1
+::in3 + ::sub_ln21 == 0
+::in3 != ::t4
+::in4 != ::icmp_ln31
+::t6_6_reg_231 != ::t6_4
+::sub_ln21 != ::t6_1
+::t6_3 != ::t4
+::t6_3 != ::t4_3
+::t6_3 != ::t4_4
+::t6_3 != ::t6_1
+::t6_4 + ::t4_1 - 4 == 0
+::t6_5 != ::t4_3
+::t6_5 != ::t4_4
+::t4_1 >= ::t4_3
+::t4_2 != ::t6_7
+::t4_2 != ::out1
+::t4_2 != ::out1_2
+::out1 <= ::out1_2
+::in1 + ::in2 - ::t6_3 == 0
+::in1 - ::t6_3 - ::t6_4 == 0
+::in1 - ::t6_3 + ::t4_1 - 4 == 0
+::in3 - ::in5 - ::t4_2 == 0
+::in4 - ::t6_6_reg_231 + ::t4_4 == 0
+::in4 - ::t6_5 + ::t4 == 0
+::in5 + ::sub_ln21 + ::t4_2 == 0
+===========================================================================
+..state2():::EXIT
+::ap_clk == orig(::ap_clk)
+::ap_idle == orig(::ap_idle)
+::ap_ready == orig(::ap_ready)
+::ap_return == ::out1_2
+::ap_rst == orig(::ap_rst)
+::ap_start == orig(::ap_start)
+::in1 == orig(::in1)
+::in2 == orig(::in2)
+::in3 == orig(::in3)
+::in4 == orig(::in4)
+::in5 == orig(::in5)
+::in6 == orig(::in6)
+::ap_CS_fsm_state1 == orig(::ap_CS_fsm_state1)
+::ap_CS_fsm_state2 == orig(::ap_CS_fsm_state2)
+::ap_CS_fsm == orig(::ap_CS_fsm)
+::ap_NS_fsm == orig(::ap_NS_fsm)
+::t6_6_reg_231 == ::t6_6
+::t6_6_reg_231 == orig(::t6_6_reg_231)
+::t6_6_reg_231 == orig(::t6_6)
+::sub_ln21 == orig(::sub_ln21)
+::icmp_ln21 == orig(::icmp_ln21)
+::icmp_ln31 == orig(::icmp_ln31)
+::t6_3 == orig(::t6_3)
+::t6_4 == orig(::t6_4)
+::t6_5 == orig(::t6_5)
+::t4 == orig(::t4)
+::icmp_ln24 == orig(::icmp_ln24)
+::t4_1 == orig(::t4_1)
+::t4_2 == orig(::t4_2)
+::t4_3 == orig(::t4_3)
+::t4_4 == orig(::t4_4)
+::zero == orig(::ap_return)
+::zero == orig(::zero)
+::ap_clk == 1
+::ap_done == 1
+::ap_idle == 0
+::ap_ready == 1
+::ap_rst == 0
+::ap_start == 1
+::ap_CS_fsm_state1 == 0
+::ap_CS_fsm_state2 == 1
+::ap_CS_fsm == 0
+::ap_NS_fsm == 0
+::icmp_ln21 one of { 0, 1 }
+::icmp_ln31 one of { 0, 1 }
+::icmp_ln24 one of { 0, 1 }
+::icmp_ln19 one of { 0, 1 }
+::icmp_ln41 one of { 0, 1 }
+::icmp_ln46 one of { 0, 1 }
+::zero == 0
+::ap_return != ::in1
+::ap_return >= ::out1
+::ap_return != orig(::out1_1)
+::in1 - ::out1 - 5 == 0
+::in1 != orig(::t6_1)
+::in2 + ::t6_4 == 0
+::in2 - ::t4_1 + 4 == 0
+::in2 != ::t4_3
+::in2 != ::t4_4
+::in2 - ::t6 + 5 == 0
+::in2 <= ::t6_2
+::in2 != orig(::t6_1)
+::in3 + ::sub_ln21 == 0
+::in3 != ::t4
+::in4 != ::icmp_ln31
+::in4 + ::t6_1 - 8 == 0
+::in5 != ::icmp_ln19
+::in5 - ::out1_1 + 8 == 0
+::in6 != ::icmp_ln41
+::t6_6_reg_231 != ::t6_4
+::t6_6_reg_231 != ::t6_1
+::t6_6_reg_231 != ::icmp_ln46
+::sub_ln21 != orig(::t6_1)
+::icmp_ln21 >= ::zero
+::icmp_ln31 >= ::zero
+::t6_3 != ::t4
+::t6_3 != ::t4_3
+::t6_3 != ::t4_4
+::t6_3 != orig(::t6_1)
+::t6_4 + ::t4_1 - 4 == 0
+::t6_4 != ::t6
+::t6_4 + ::t6 - 5 == 0
+::t6_4 != ::t6_1
+::t6_4 != ::t6_2
+::t6_4 != ::t6_7
+::t6_5 != ::t4_3
+::t6_5 != ::t4_4
+::icmp_ln24 >= ::zero
+::t4_1 >= ::t4_3
+::t4_1 - ::t6 + 1 == 0
+::t4_1 != ::t6_2
+::t4_2 != orig(::t6_7)
+::t4_2 != orig(::out1)
+::t4_2 != orig(::out1_2)
+::t4_3 < ::t6
+::t4_3 != ::t6_2
+::t4_4 != ::t6
+::t4_4 != ::t6_2
+::icmp_ln19 >= ::zero
+::icmp_ln41 >= ::zero
+::t6_7 != ::icmp_ln46
+::icmp_ln46 >= ::zero
+::out1 != ::out1_1
+::zero <= orig(::icmp_ln19)
+::zero <= orig(::icmp_ln41)
+::zero <= orig(::icmp_ln46)
+::in1 + ::in2 - ::t6_3 == 0
+::in1 - ::t6_3 - ::t6_4 == 0
+::in1 - ::t6_3 + ::t4_1 - 4 == 0
+::in1 - ::t6_3 + ::t6 - 5 == 0
+::in2 - ::t6_3 + ::out1 + 5 == 0
+::in3 - ::in5 - ::t4_2 == 0
+::in3 - ::t4_2 - ::out1_1 + 8 == 0
+::in4 - ::t6_6_reg_231 + ::t4_4 == 0
+::in4 - ::t6_5 + ::t4 == 0
+::in5 + ::sub_ln21 + ::t4_2 == 0
+::t6_6_reg_231 - ::t4_4 + ::t6_1 - 8 == 0
+::sub_ln21 + ::t4_2 + ::out1_1 - 8 == 0
+::t6_3 + ::t6_4 - ::out1 - 5 == 0
+::t6_3 - ::t4_1 - ::out1 - 1 == 0
+::t6_3 - ::t6 - ::out1 == 0
+::t6_5 - ::t4 + ::t6_1 - 8 == 0
+Exiting Daikon.
