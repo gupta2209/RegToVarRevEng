@@ -13,6 +13,8 @@ Processing trace data; reading 1 dtrace file:
 ::op5_reg_246 == ::op5
 ::op7_reg_282 == ::op7
 ::op8_reg_287 == ::op8
+::tmp_6_reg_267 == ::icmp_ln27
+::tmp_reg_257 == ::icmp_ln16
 ::ap_clk one of { 0, 1 }
 ::ap_done one of { 0, 1 }
 ::ap_idle == 0
@@ -67,10 +69,9 @@ Processing trace data; reading 1 dtrace file:
 ::tmp_6_reg_267 one of { 0, 1 }
 ::tmp_fu_124_p2 == 0
 ::tmp_reg_257 one of { 0, 1 }
-::icmp_ln16 one of { 0, 1 }
-::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
+::zero == 0
 ap_clk__1 has only one value
 ap_clk__1 != null
 ap_clk__1[] == [1]
@@ -196,6 +197,9 @@ o2_ap_vld__1[] elements == ::ap_start
 ::i6 <= ::o2
 ::i6 <= ::op6
 ::o1 >= ::op13_reg_292
+::o1 >= ::tmp_6_reg_267
+::o1 >= ::tmp_reg_257
+::o1 >= ::zero
 ::o1_ap_vld in o1_ap_vld__1[]
 o1_ap_vld__1[] elements == ::o1_ap_vld
 ::o1_ap_vld in o2_ap_vld__1[]
@@ -203,6 +207,9 @@ o2_ap_vld__1[] elements == ::o1_ap_vld
 ::o2 >= ::o3
 ::o2 >= ::o4
 ::o2 >= ::op14_reg_298
+::o2 >= ::tmp_6_reg_267
+::o2 >= ::tmp_reg_257
+::o2 >= ::zero
 i1__1[] elements < ::o2
 i4__1[] elements < ::o2
 G3__1[] elements < ::o2
@@ -554,6 +561,8 @@ ap_idle__1[] elements == ::tmp_6_fu_141_p2
 ap_return__1[] elements == ::tmp_6_fu_141_p2
 ::tmp_6_fu_141_p2 in ap_rst__1[]
 ap_rst__1[] elements == ::tmp_6_fu_141_p2
+::tmp_6_reg_267 <= ::op6
+::tmp_6_reg_267 >= ::zero
 ::tmp_fu_124_p2 in ap_done__1[]
 ap_done__1[] elements == ::tmp_fu_124_p2
 ::tmp_fu_124_p2 in ap_idle__1[]
@@ -562,6 +571,9 @@ ap_idle__1[] elements == ::tmp_fu_124_p2
 ap_return__1[] elements == ::tmp_fu_124_p2
 ::tmp_fu_124_p2 in ap_rst__1[]
 ap_rst__1[] elements == ::tmp_fu_124_p2
+::tmp_reg_257 <= ::op6
+::tmp_reg_257 >= ::zero
+::op6 >= ::zero
 i1__1[] elements < ::op6
 i4__1[] elements < ::op6
 G3__1[] elements < ::op6
@@ -583,6 +595,14 @@ ap_idle__1[] elements == ::add_ln52_2
 ap_return__1[] elements == ::add_ln52_2
 ::add_ln52_2 in ap_rst__1[]
 ap_rst__1[] elements == ::add_ln52_2
+::zero in ap_done__1[]
+ap_done__1[] elements == ::zero
+::zero in ap_idle__1[]
+ap_idle__1[] elements == ::zero
+::zero in ap_return__1[]
+ap_return__1[] elements == ::zero
+::zero in ap_rst__1[]
+ap_rst__1[] elements == ::zero
 ap_clk__1[] elements == dummy
 dummy in ap_clk__1[]
 ap_ready__1[] elements == dummy
@@ -654,9 +674,12 @@ o2_ap_vld__1[] elements == dummy
 ::tmp1_fu_189_p2 == orig(::tmp1_fu_189_p2)
 ::tmp2_fu_199_p2 == orig(::tmp2_fu_199_p2)
 ::tmp_6_fu_141_p2 == orig(::tmp_6_fu_141_p2)
+::tmp_6_reg_267 == ::icmp_ln27
 ::tmp_fu_124_p2 == orig(::tmp_fu_124_p2)
+::tmp_reg_257 == ::icmp_ln16
 ::add_ln52 == orig(::add_ln52)
 ::add_ln52_2 == orig(::add_ln52_2)
+::zero == orig(::zero)
 ap_clk__1[] == orig(ap_clk__1[])
 ap_idle__1[] == orig(ap_idle__1[])
 ap_ready__1[] == orig(ap_ready__1[])
@@ -729,10 +752,9 @@ GG2__1[] == orig(GG2__1[])
 ::tmp_6_reg_267 one of { 0, 1 }
 ::tmp_fu_124_p2 == 0
 ::tmp_reg_257 one of { 0, 1 }
-::icmp_ln16 one of { 0, 1 }
-::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
+::zero == 0
 ap_clk__1[] == [1]
 ap_clk__1[] elements == 1
 ap_done__1[] == [1]
@@ -984,6 +1006,7 @@ ap_return__1[] elements == ::ap_return
 ::ap_return != orig(::op6_3_reg_277)
 ::ap_return != orig(::op7_reg_282)
 ::ap_return != orig(::op8_reg_287)
+::ap_return != orig(::tmp_6_reg_267)
 ::ap_return != orig(::op3)
 ::ap_return != orig(::op6_3)
 ::ap_return != orig(::op6_1)
@@ -1050,8 +1073,10 @@ o1__1[] elements >= ::i1
 ::i2 != ::op5_1_reg_262
 ::i2 != ::op5_reg_246
 ::i2 != ::op8_reg_287
+::i2 != ::tmp_6_reg_267
 ::i2 < ::op6
 ::i2 != ::add_ln49
+::i2 != ::zero
 ::i2 in i2__1[]
 i2__1[] elements == ::i2
 o2__1[] elements >= ::i2
@@ -1084,6 +1109,7 @@ o1__1[] elements > ::i3
 ::i3 != orig(::op5_reg_246)
 ::i3 != orig(::op6_3_reg_277)
 ::i3 != orig(::op8_reg_287)
+::i3 != orig(::tmp_6_reg_267)
 ::i3 != orig(::op6_3)
 ::i3 != orig(::op6)
 ::i3 != orig(::op6_4)
@@ -1097,8 +1123,10 @@ o1__1[] elements > ::i3
 ::op5_2_reg_251 % ::i4 == 0
 ::op6_3_reg_277 % ::i4 == 0
 ::op7_reg_282 % ::i4 == 0
+::i4 != ::tmp_reg_257
 ::i4 != ::op5_3
 ::i4 < ::op6
+::i4 != ::zero
 ::i4 in i4__1[]
 i4__1[] elements == ::i4
 ::i4 != orig(::ap_return)
@@ -1112,6 +1140,7 @@ i4__1[] elements == ::i4
 ::i4 != orig(::op5_reg_246)
 ::i4 != orig(::op6_3_reg_277)
 ::i4 != orig(::op7_reg_282)
+::i4 != orig(::tmp_reg_257)
 ::i4 != orig(::op5_3)
 ::i4 != orig(::op6_3)
 ::i4 < orig(::op6)
@@ -1148,12 +1177,15 @@ o2__1[] elements >= ::i6
 ::o1 != ::op6_3_reg_277
 ::o1 != ::op7_reg_282
 ::o1 != ::op8_reg_287
+::o1 > ::tmp_6_reg_267
+::o1 > ::tmp_reg_257
 ::o1 != ::op5_3
 ::o1 != ::op3
 ::o1 != ::op6_1
 ::o1 != ::op6_2
 ::o1 != ::op6_4
 ::o1 != ::op6_5
+::o1 > ::zero
 i1__1[] elements <= ::o1
 i3__1[] elements < ::o1
 i6__1[] elements <= ::o1
@@ -1184,6 +1216,8 @@ GG2__1[] elements < ::o1
 ::o1 != orig(::op4_reg_239)
 ::o1 != orig(::op5_1_reg_262)
 ::o1 != orig(::op5_2_reg_251)
+::o1 >= orig(::tmp_6_reg_267)
+::o1 > orig(::tmp_reg_257)
 ::o1 != orig(::op5_3)
 ::o1 != orig(::op3)
 ::o1 != orig(::add_ln49)
@@ -1215,12 +1249,15 @@ orig(o2_ap_vld__1[]) elements == ::o1_ap_vld
 ::o2 != ::op5_2_reg_251
 ::o2 != ::op6_3_reg_277
 ::o2 != ::op8_reg_287
+::o2 > ::tmp_6_reg_267
+::o2 > ::tmp_reg_257
 ::o2 != ::op5_3
 ::o2 != ::op3
 ::o2 != ::op6_3
 ::o2 != ::op6
 ::o2 != ::op6_1
 ::o2 != ::op6_2
+::o2 > ::zero
 i2__1[] elements <= ::o2
 i6__1[] elements <= ::o2
 ::o2 in o2__1[]
@@ -1252,6 +1289,8 @@ GG1__1[] elements <= ::o2
 ::o2 != orig(::op5_reg_246)
 ::o2 != orig(::op6_3_reg_277)
 ::o2 != orig(::op8_reg_287)
+::o2 > orig(::tmp_6_reg_267)
+::o2 > orig(::tmp_reg_257)
 ::o2 != orig(::op3)
 ::o2 != orig(::op6_3)
 ::o2 != orig(::op6)
@@ -1577,12 +1616,15 @@ orig(ap_return__1[]) elements == ::op13_fu_194_p2
 ::op13_reg_292 != ::op6_3_reg_277
 ::op13_reg_292 != ::op7_reg_282
 ::op13_reg_292 != ::op8_reg_287
+::op13_reg_292 != ::tmp_6_reg_267
+::op13_reg_292 != ::tmp_reg_257
 ::op13_reg_292 != ::op5_3
 ::op13_reg_292 != ::op3
 ::op13_reg_292 != ::op6_1
 ::op13_reg_292 != ::op6_2
 ::op13_reg_292 != ::op6_4
 ::op13_reg_292 != ::op6_5
+::op13_reg_292 != ::zero
 o1__1[] elements >= ::op13_reg_292
 ::op13_reg_292 != orig(::G1)
 ::op13_reg_292 != orig(::G2)
@@ -1600,6 +1642,7 @@ o1__1[] elements >= ::op13_reg_292
 ::op13_reg_292 != orig(::op4_reg_239)
 ::op13_reg_292 != orig(::op5_1_reg_262)
 ::op13_reg_292 != orig(::op5_2_reg_251)
+::op13_reg_292 != orig(::tmp_reg_257)
 ::op13_reg_292 != orig(::op5_3)
 ::op13_reg_292 != orig(::op3)
 ::op13_reg_292 != orig(::add_ln49)
@@ -1617,11 +1660,14 @@ orig(ap_return__1[]) elements == ::op14_fu_204_p2
 ::op14_reg_298 != ::op4_reg_239
 ::op14_reg_298 != ::op5_2_reg_251
 ::op14_reg_298 != ::op6_3_reg_277
+::op14_reg_298 != ::tmp_6_reg_267
+::op14_reg_298 != ::tmp_reg_257
 ::op14_reg_298 != ::op5_3
 ::op14_reg_298 != ::op3
 ::op14_reg_298 != ::op6
 ::op14_reg_298 != ::op6_1
 ::op14_reg_298 != ::op6_2
+::op14_reg_298 != ::zero
 o2__1[] elements >= ::op14_reg_298
 ::op14_reg_298 != orig(::G4)
 ::op14_reg_298 != orig(::GG2)
@@ -1639,6 +1685,8 @@ o2__1[] elements >= ::op14_reg_298
 ::op14_reg_298 != orig(::op5_reg_246)
 ::op14_reg_298 != orig(::op6_3_reg_277)
 ::op14_reg_298 != orig(::op8_reg_287)
+::op14_reg_298 != orig(::tmp_6_reg_267)
+::op14_reg_298 != orig(::tmp_reg_257)
 ::op14_reg_298 != orig(::op3)
 ::op14_reg_298 != orig(::op6)
 ::op14_reg_298 != orig(::op6_5)
@@ -1745,6 +1793,7 @@ orig(ap_return__1[]) elements == ::op5_2_fu_118_p2
 ::op5_2_reg_251 != orig(::op5_2_reg_251)
 ::op5_2_reg_251 != orig(::op5_reg_246)
 ::op5_2_reg_251 != orig(::op6_3_reg_277)
+::op5_2_reg_251 != orig(::tmp_6_reg_267)
 ::op5_2_reg_251 != orig(::op5_3)
 ::op5_2_reg_251 != orig(::op6_3)
 ::op5_2_reg_251 != orig(::op6)
@@ -1936,8 +1985,14 @@ o2__1[] elements > ::tmp_6_fu_141_p2
 orig(ap_done__1[]) elements == ::tmp_6_fu_141_p2
 ::tmp_6_fu_141_p2 in orig(ap_return__1[])
 orig(ap_return__1[]) elements == ::tmp_6_fu_141_p2
+::tmp_6_reg_267 < ::op6
+::tmp_6_reg_267 != ::add_ln47
+::tmp_6_reg_267 >= ::zero
 o1__1[] elements > ::tmp_6_reg_267
 o2__1[] elements > ::tmp_6_reg_267
+::tmp_6_reg_267 <= orig(::o1)
+::tmp_6_reg_267 <= orig(::o2)
+::tmp_6_reg_267 <= orig(::op6)
 ::tmp_fu_124_p2 in ap_idle__1[]
 ap_idle__1[] elements == ::tmp_fu_124_p2
 ::tmp_fu_124_p2 in ap_rst__1[]
@@ -1948,10 +2003,18 @@ o2__1[] elements > ::tmp_fu_124_p2
 orig(ap_done__1[]) elements == ::tmp_fu_124_p2
 ::tmp_fu_124_p2 in orig(ap_return__1[])
 orig(ap_return__1[]) elements == ::tmp_fu_124_p2
+::tmp_reg_257 < ::op6
+::tmp_reg_257 != ::add_ln47
+::tmp_reg_257 >= ::zero
 o1__1[] elements > ::tmp_reg_257
 o2__1[] elements > ::tmp_reg_257
-o1__1[] elements > ::icmp_ln16
-o2__1[] elements > ::icmp_ln16
+::tmp_reg_257 != orig(::i4)
+::tmp_reg_257 != orig(::o1)
+::tmp_reg_257 != orig(::o2)
+::tmp_reg_257 != orig(::op13_reg_292)
+::tmp_reg_257 != orig(::op14_reg_298)
+::tmp_reg_257 != orig(::op6)
+::tmp_reg_257 != orig(::add_ln47)
 ::op5_3 != ::op6_4
 ::op5_3 != ::add_ln49
 ::op5_3 != orig(::G4)
@@ -1967,6 +2030,7 @@ o2__1[] elements > ::icmp_ln16
 ::op5_3 != orig(::op5_2_reg_251)
 ::op5_3 != orig(::op5_reg_246)
 ::op5_3 != orig(::op6_3_reg_277)
+::op5_3 != orig(::tmp_6_reg_267)
 ::op5_3 != orig(::op5_3)
 ::op5_3 != orig(::op6_3)
 ::op5_3 != orig(::op6)
@@ -1976,8 +2040,6 @@ o2__1[] elements > ::icmp_ln16
 ::op5_3 != orig(::op6_5)
 ::op5_3 != orig(::add_ln47)
 ::op5_3 != orig(::add_ln49)
-o1__1[] elements > ::icmp_ln27
-o2__1[] elements > ::icmp_ln27
 ::op3 != ::op6
 ::op3 != ::op6_2
 ::op3 != ::op6_5
@@ -1988,6 +2050,7 @@ o2__1[] elements > ::icmp_ln27
 ::op6 != ::op6_1
 ::op6 != ::op6_4
 ::op6 != ::add_ln49
+::op6 > ::zero
 i1__1[] elements < ::op6
 i2__1[] elements < ::op6
 i3__1[] elements < ::op6
@@ -2021,6 +2084,8 @@ GG2__1[] elements < ::op6
 ::op6 != orig(::op5_1_reg_262)
 ::op6 != orig(::op5_2_reg_251)
 ::op6 != orig(::op6_3_reg_277)
+::op6 > orig(::tmp_6_reg_267)
+::op6 > orig(::tmp_reg_257)
 ::op6 != orig(::op5_3)
 ::op6 != orig(::op3)
 ::op6 != orig(::op6_3)
@@ -2058,6 +2123,7 @@ orig(o2__1[]) elements < ::op6
 ::op6_5 != orig(::op6_2)
 ::op6_5 != orig(::add_ln47)
 ::add_ln47 != ::add_ln49
+::add_ln47 != ::zero
 ::add_ln47 != orig(::G4)
 ::add_ln47 != orig(::GG1)
 ::add_ln47 != orig(::ap_return)
@@ -2069,6 +2135,8 @@ orig(o2__1[]) elements < ::op6
 ::add_ln47 != orig(::op5_2_reg_251)
 ::add_ln47 != orig(::op6_3_reg_277)
 ::add_ln47 != orig(::op8_reg_287)
+::add_ln47 != orig(::tmp_6_reg_267)
+::add_ln47 != orig(::tmp_reg_257)
 ::add_ln47 != orig(::op5_3)
 ::add_ln47 != orig(::op3)
 ::add_ln47 != orig(::op6_3)
@@ -2113,6 +2181,21 @@ o2__1[] elements > ::add_ln52_2
 orig(ap_done__1[]) elements == ::add_ln52_2
 ::add_ln52_2 in orig(ap_return__1[])
 orig(ap_return__1[]) elements == ::add_ln52_2
+::zero in ap_idle__1[]
+ap_idle__1[] elements == ::zero
+::zero in ap_rst__1[]
+ap_rst__1[] elements == ::zero
+o1__1[] elements > ::zero
+o2__1[] elements > ::zero
+::zero <= orig(::o1)
+::zero <= orig(::o2)
+::zero <= orig(::tmp_6_reg_267)
+::zero <= orig(::tmp_reg_257)
+::zero <= orig(::op6)
+::zero in orig(ap_done__1[])
+orig(ap_done__1[]) elements == ::zero
+::zero in orig(ap_return__1[])
+orig(ap_return__1[]) elements == ::zero
 ap_clk__1[] elements == orig(dummy)
 orig(dummy) in ap_clk__1[]
 ap_done__1[] > orig(ap_done__1[]) (elementwise)
@@ -2152,8 +2235,6 @@ o1__1[] elements >= orig(::o2_ap_vld)
 o1__1[] elements >= orig(::ap_CS_fsm_state5)
 o1__1[] elements >= orig(::tmp_6_reg_267)
 o1__1[] elements > orig(::tmp_reg_257)
-o1__1[] elements > orig(::icmp_ln16)
-o1__1[] elements >= orig(::icmp_ln27)
 o1__1[] > orig(ap_return__1[]) (elementwise)
 o1__1[] elements >= orig(dummy)
 o1_ap_vld__1[] == orig(o1_ap_vld__1[]) (elementwise)
@@ -2182,8 +2263,6 @@ o2__1[] elements > orig(::o4)
 o2__1[] elements > orig(::ap_CS_fsm_state5)
 o2__1[] elements > orig(::tmp_6_reg_267)
 o2__1[] elements > orig(::tmp_reg_257)
-o2__1[] elements > orig(::icmp_ln16)
-o2__1[] elements > orig(::icmp_ln27)
 o2__1[] > orig(ap_return__1[]) (elementwise)
 o2__1[] > orig(o2__1[]) (elementwise)
 o2__1[] elements > orig(dummy)
@@ -2229,11 +2308,15 @@ GG1__1[] elements < orig(::op6)
 ::G1 == ::op5_reg_246
 ::G1 == ::op7_reg_282
 ::G1 == ::op8_reg_287
+::G1 == ::tmp_6_reg_267
+::G1 == ::tmp_reg_257
 ::G1 == ::op4
 ::G1 == ::op5
 ::G1 == ::op5_2
+::G1 == ::icmp_ln16
 ::G1 == ::op5_1
 ::G1 == ::op5_3
+::G1 == ::icmp_ln27
 ::G1 == ::op3
 ::G1 == ::op6_3
 ::G1 == ::op7
@@ -2248,6 +2331,7 @@ GG1__1[] elements < orig(::op6)
 ::G1 == ::add_ln49
 ::G1 == ::op14
 ::G1 == ::add_ln52_1
+::G1 == ::zero
 ::G1 == 0
 ::ap_clk == 0
 ::ap_done == 0
@@ -2301,11 +2385,7 @@ GG1__1[] elements < orig(::op6)
 ::tmp1_fu_189_p2 == 0
 ::tmp2_fu_199_p2 == 0
 ::tmp_6_fu_141_p2 == 0
-::tmp_6_reg_267 == 0
 ::tmp_fu_124_p2 == 0
-::tmp_reg_257 == 0
-::icmp_ln16 == 0
-::icmp_ln27 == 0
 ::add_ln52 == 0
 ::add_ln52_2 == 0
 ===========================================================================
@@ -2382,11 +2462,60 @@ GG1__1[] elements < orig(::op6)
 ::tmp1_fu_189_p2 == orig(::tmp1_fu_189_p2)
 ::tmp2_fu_199_p2 == orig(::tmp2_fu_199_p2)
 ::tmp_6_fu_141_p2 == orig(::tmp_6_fu_141_p2)
+::tmp_6_reg_267 == ::tmp_reg_257
+::tmp_6_reg_267 == ::icmp_ln16
+::tmp_6_reg_267 == ::icmp_ln27
+::tmp_6_reg_267 == ::zero
+::tmp_6_reg_267 == orig(::G1)
+::tmp_6_reg_267 == orig(::G2)
+::tmp_6_reg_267 == orig(::G3)
+::tmp_6_reg_267 == orig(::G4)
+::tmp_6_reg_267 == orig(::GG1)
+::tmp_6_reg_267 == orig(::GG2)
+::tmp_6_reg_267 == orig(::ap_return)
+::tmp_6_reg_267 == orig(::i1)
+::tmp_6_reg_267 == orig(::i2)
+::tmp_6_reg_267 == orig(::i3)
+::tmp_6_reg_267 == orig(::i4)
+::tmp_6_reg_267 == orig(::i6)
+::tmp_6_reg_267 == orig(::o1)
+::tmp_6_reg_267 == orig(::o2)
+::tmp_6_reg_267 == orig(::o3)
+::tmp_6_reg_267 == orig(::o4)
+::tmp_6_reg_267 == orig(::op13_reg_292)
+::tmp_6_reg_267 == orig(::op14_reg_298)
+::tmp_6_reg_267 == orig(::op3_reg_272)
+::tmp_6_reg_267 == orig(::op4_reg_239)
+::tmp_6_reg_267 == orig(::op5_1_reg_262)
+::tmp_6_reg_267 == orig(::op5_2_reg_251)
+::tmp_6_reg_267 == orig(::op5_reg_246)
+::tmp_6_reg_267 == orig(::op7_reg_282)
+::tmp_6_reg_267 == orig(::op8_reg_287)
 ::tmp_6_reg_267 == orig(::tmp_6_reg_267)
+::tmp_6_reg_267 == orig(::tmp_reg_257)
+::tmp_6_reg_267 == orig(::op4)
+::tmp_6_reg_267 == orig(::op5)
+::tmp_6_reg_267 == orig(::op5_2)
+::tmp_6_reg_267 == orig(::icmp_ln16)
+::tmp_6_reg_267 == orig(::op5_1)
+::tmp_6_reg_267 == orig(::op5_3)
+::tmp_6_reg_267 == orig(::icmp_ln27)
+::tmp_6_reg_267 == orig(::op3)
+::tmp_6_reg_267 == orig(::op6_3)
+::tmp_6_reg_267 == orig(::op7)
+::tmp_6_reg_267 == orig(::op8)
+::tmp_6_reg_267 == orig(::op6)
+::tmp_6_reg_267 == orig(::op6_1)
+::tmp_6_reg_267 == orig(::op6_2)
+::tmp_6_reg_267 == orig(::op6_4)
+::tmp_6_reg_267 == orig(::op6_5)
+::tmp_6_reg_267 == orig(::add_ln47)
+::tmp_6_reg_267 == orig(::op13)
+::tmp_6_reg_267 == orig(::add_ln49)
+::tmp_6_reg_267 == orig(::op14)
+::tmp_6_reg_267 == orig(::add_ln52_1)
+::tmp_6_reg_267 == orig(::zero)
 ::tmp_fu_124_p2 == orig(::tmp_fu_124_p2)
-::tmp_reg_257 == orig(::tmp_reg_257)
-::icmp_ln16 == orig(::icmp_ln16)
-::icmp_ln27 == orig(::icmp_ln27)
 ::add_ln52 == orig(::add_ln52)
 ::add_ln52_2 == orig(::add_ln52_2)
 ::G1 == 2
@@ -2456,9 +2585,6 @@ GG1__1[] elements < orig(::op6)
 ::tmp_6_fu_141_p2 == 0
 ::tmp_6_reg_267 == 0
 ::tmp_fu_124_p2 == 0
-::tmp_reg_257 == 0
-::icmp_ln16 == 0
-::icmp_ln27 == 0
 ::op6_3 == -10
 ::op6 == 20
 ::op6_4 == -6
@@ -2470,6 +2596,7 @@ return == 0
 ..state1():::ENTER
 ::op4_reg_239 == ::op5_2_reg_251
 ::op4_reg_239 == ::op5_reg_246
+::op4_reg_239 == ::zero
 ::ap_clk == 1
 ::ap_done == 0
 ::ap_idle == 0
@@ -2609,6 +2736,7 @@ return == 0
 ::i2 != ::add_ln52_1
 ::i3 != ::op5
 ::i3 != ::op5_1
+::i3 != ::icmp_ln27
 ::i3 != ::op6_3
 ::i3 != ::op8
 ::i3 != ::op6
@@ -2620,6 +2748,7 @@ return == 0
 ::i4 != ::op4
 ::i4 != ::op5
 ::i4 != ::op5_2
+::i4 != ::icmp_ln16
 ::i4 != ::op5_3
 ::i4 != ::op6_3
 ::i4 != ::op7
@@ -2635,6 +2764,7 @@ return == 0
 ::i6 != ::op14
 ::i6 != ::add_ln52_1
 ::o1 != ::op5_2
+::o1 != ::icmp_ln16
 ::o1 != ::op5_3
 ::o1 != ::op6_3
 ::o1 != ::op7
@@ -2662,7 +2792,11 @@ return == 0
 ::o4 != ::op6_5
 ::o4 != ::add_ln49
 ::o4 != ::op14
+::op4_reg_239 <= ::icmp_ln16
+::op4_reg_239 <= ::icmp_ln27
 ::op4_reg_239 <= ::op6
+::icmp_ln16 <= ::op6
+::icmp_ln27 <= ::op6
 ::op4 + ::add_ln47 - ::op13 == 0
 ::op7 + ::add_ln49 - ::op14 == 0
 ::op13 + ::op14 - ::add_ln52_1 == 0
@@ -2768,6 +2902,10 @@ return == 0
 ::add_ln52 == orig(::add_ln52)
 ::add_ln52_1 == orig(::add_ln52_1)
 ::add_ln52_2 == orig(::add_ln52_2)
+::zero == orig(::op4_reg_239)
+::zero == orig(::op5_2_reg_251)
+::zero == orig(::op5_reg_246)
+::zero == orig(::zero)
 ::ap_clk == 1
 ::ap_done == 0
 ::ap_idle == 0
@@ -2834,6 +2972,7 @@ return == 0
 ::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
+::zero == 0
 ::G1 != ::op5_2_reg_251
 ::G1 != ::op5_1
 ::G1 != ::op3
@@ -2911,8 +3050,9 @@ return == 0
 ::i2 != ::op6_4
 ::i2 != ::op6_5
 ::i2 != ::add_ln52_1
-::i2 != orig(::op4_reg_239)
+::i2 != ::zero
 ::i3 != ::op5_1
+::i3 != ::icmp_ln27
 ::i3 != ::op6_3
 ::i3 != ::op8
 ::i3 != ::op6
@@ -2924,6 +3064,7 @@ return == 0
 ::i4 != ::op4_reg_239
 ::i4 != ::op5_2_reg_251
 ::op5_2_reg_251 % ::i4 == 0
+::i4 != ::icmp_ln16
 ::i4 != ::op5_3
 ::i4 != ::op6_3
 ::i4 != ::op7
@@ -2932,7 +3073,7 @@ return == 0
 ::i4 != ::op13
 ::i4 != ::op14
 ::i4 != ::add_ln52_1
-::i4 != orig(::op4_reg_239)
+::i4 != ::zero
 ::i4 != orig(::op4)
 ::i4 != orig(::op5)
 ::i4 != orig(::op5_2)
@@ -2945,6 +3086,7 @@ return == 0
 ::i6 != ::add_ln52_1
 ::i6 != orig(::op4)
 ::o1 != ::op4_reg_239
+::o1 != ::icmp_ln16
 ::o1 != ::op5_3
 ::o1 != ::op6_3
 ::o1 != ::op7
@@ -2988,6 +3130,7 @@ return == 0
 ::op4_reg_239 != orig(::op5_2)
 ::op5_2_reg_251 != ::op5_1
 ::op5_2_reg_251 != ::op5_3
+::op5_2_reg_251 != ::icmp_ln27
 ::op5_2_reg_251 != ::op6_3
 ::op5_2_reg_251 != ::op6
 ::op5_2_reg_251 != ::op6_1
@@ -3004,13 +3147,20 @@ return == 0
 ::op5_reg_246 != ::add_ln47
 ::op5_reg_246 != ::op14
 ::op5_reg_246 != ::add_ln52_1
-::op6 >= orig(::op4_reg_239)
+::icmp_ln16 <= ::op6
+::icmp_ln16 >= ::zero
+::icmp_ln27 <= ::op6
+::icmp_ln27 >= ::zero
+::op6 >= ::zero
 ::op7 + ::add_ln49 - ::op14 == 0
 ::add_ln47 - ::op13 + orig(::op4) == 0
 ::op13 + ::op14 - ::add_ln52_1 == 0
 ===========================================================================
 ..state2():::ENTER
 ::op4_reg_239 == ::op4
+::op5_1_reg_262 == ::tmp_6_reg_267
+::op5_1_reg_262 == ::tmp_reg_257
+::op5_1_reg_262 == ::zero
 ::op5_2_reg_251 == ::op5_2
 ::op5_reg_246 == ::op5
 ::ap_clk == 1
@@ -3072,9 +3222,7 @@ return == 0
 ::tmp1_fu_189_p2 == 0
 ::tmp2_fu_199_p2 == 0
 ::tmp_6_fu_141_p2 == 0
-::tmp_6_reg_267 == 0
 ::tmp_fu_124_p2 == 0
-::tmp_reg_257 == 0
 ::icmp_ln16 one of { 0, 1 }
 ::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
@@ -3150,6 +3298,7 @@ return == 0
 ::i2 != ::op6_5
 ::i2 != ::add_ln52_1
 ::i3 != ::op5_1
+::i3 != ::icmp_ln27
 ::i3 != ::op6_3
 ::i3 != ::op8
 ::i3 != ::op6
@@ -3161,6 +3310,7 @@ return == 0
 ::i4 != ::op5_1_reg_262
 ::i4 != ::op5_2_reg_251
 ::op5_2_reg_251 % ::i4 == 0
+::i4 != ::icmp_ln16
 ::i4 != ::op5_3
 ::i4 != ::op6_3
 ::i4 != ::op7
@@ -3177,6 +3327,7 @@ return == 0
 ::i6 != ::op14
 ::i6 != ::add_ln52_1
 ::o1 != ::op4_reg_239
+::o1 != ::icmp_ln16
 ::o1 != ::op5_3
 ::o1 != ::op6_3
 ::o1 != ::op7
@@ -3214,9 +3365,12 @@ return == 0
 ::op4_reg_239 != ::op6_2
 ::op4_reg_239 != ::op6_5
 ::op4_reg_239 != ::add_ln52_1
+::op5_1_reg_262 <= ::icmp_ln16
+::op5_1_reg_262 <= ::icmp_ln27
 ::op5_1_reg_262 <= ::op6
 ::op5_2_reg_251 != ::op5_1
 ::op5_2_reg_251 != ::op5_3
+::op5_2_reg_251 != ::icmp_ln27
 ::op5_2_reg_251 != ::op6_3
 ::op5_2_reg_251 != ::op6
 ::op5_2_reg_251 != ::op6_1
@@ -3231,6 +3385,8 @@ return == 0
 ::op5_reg_246 != ::add_ln47
 ::op5_reg_246 != ::op14
 ::op5_reg_246 != ::add_ln52_1
+::icmp_ln16 <= ::op6
+::icmp_ln27 <= ::op6
 ::op7 + ::add_ln49 - ::op14 == 0
 ::op13 + ::op14 - ::add_ln52_1 == 0
 ===========================================================================
@@ -3318,7 +3474,9 @@ return == 0
 ::tmp1_fu_189_p2 == orig(::tmp1_fu_189_p2)
 ::tmp2_fu_199_p2 == orig(::tmp2_fu_199_p2)
 ::tmp_6_fu_141_p2 == orig(::tmp_6_fu_141_p2)
+::tmp_6_reg_267 == ::icmp_ln27
 ::tmp_fu_124_p2 == orig(::tmp_fu_124_p2)
+::tmp_reg_257 == ::icmp_ln16
 ::op3 == orig(::op3)
 ::op6_3 == orig(::op6_3)
 ::op7 == orig(::op7)
@@ -3335,6 +3493,10 @@ return == 0
 ::add_ln52 == orig(::add_ln52)
 ::add_ln52_1 == orig(::add_ln52_1)
 ::add_ln52_2 == orig(::add_ln52_2)
+::zero == orig(::op5_1_reg_262)
+::zero == orig(::tmp_6_reg_267)
+::zero == orig(::tmp_reg_257)
+::zero == orig(::zero)
 ::ap_clk == 1
 ::ap_done == 0
 ::ap_idle == 0
@@ -3396,10 +3558,9 @@ return == 0
 ::tmp_6_reg_267 one of { 0, 1 }
 ::tmp_fu_124_p2 == 0
 ::tmp_reg_257 one of { 0, 1 }
-::icmp_ln16 one of { 0, 1 }
-::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
+::zero == 0
 ::G1 != ::op5_2_reg_251
 ::G1 != ::op5_3
 ::G1 != ::op3
@@ -3465,6 +3626,7 @@ return == 0
 ::i2 != ::op4_reg_239
 ::i2 != ::op5_1_reg_262
 ::i2 != ::op5_reg_246
+::i2 != ::tmp_6_reg_267
 ::i2 != ::op6_3
 ::i2 != ::op8
 ::i2 != ::op6
@@ -3473,7 +3635,7 @@ return == 0
 ::i2 != ::op6_4
 ::i2 != ::op6_5
 ::i2 != ::add_ln52_1
-::i2 != orig(::op5_1_reg_262)
+::i2 != ::zero
 ::i2 != orig(::op5_1)
 ::i3 != ::op5_1_reg_262
 ::i3 != ::op6_3
@@ -3484,9 +3646,11 @@ return == 0
 ::i3 != ::add_ln49
 ::i3 != ::op14
 ::i3 != orig(::op5_1)
+::i3 != orig(::icmp_ln27)
 ::i4 != ::op4_reg_239
 ::i4 != ::op5_2_reg_251
 ::op5_2_reg_251 % ::i4 == 0
+::i4 != ::tmp_reg_257
 ::i4 != ::op5_3
 ::i4 != ::op6_3
 ::i4 != ::op7
@@ -3495,7 +3659,8 @@ return == 0
 ::i4 != ::op13
 ::i4 != ::op14
 ::i4 != ::add_ln52_1
-::i4 != orig(::op5_1_reg_262)
+::i4 != ::zero
+::i4 != orig(::icmp_ln16)
 ::i4 != orig(::op5_3)
 ::i6 != ::op4_reg_239
 ::i6 != ::op5_2_reg_251
@@ -3507,6 +3672,7 @@ return == 0
 ::i6 != ::add_ln52_1
 ::o1 != ::op4_reg_239
 ::o1 != ::op5_1_reg_262
+::o1 != ::tmp_reg_257
 ::o1 != ::op6_3
 ::o1 != ::op7
 ::o1 != ::op8
@@ -3515,6 +3681,7 @@ return == 0
 ::o1 != ::add_ln49
 ::o1 != ::op14
 ::o1 != ::add_ln52_1
+::o1 != orig(::icmp_ln16)
 ::o1 != orig(::op5_3)
 ::o2 != ::op5_2_reg_251
 ::o2 != ::op5_reg_246
@@ -3568,12 +3735,18 @@ return == 0
 ::op5_2_reg_251 != ::op14
 ::op5_2_reg_251 != orig(::op5_1)
 ::op5_2_reg_251 != orig(::op5_3)
+::op5_2_reg_251 != orig(::icmp_ln27)
 ::op5_reg_246 != ::op6_5
 ::op5_reg_246 != ::add_ln47
 ::op5_reg_246 != ::op14
 ::op5_reg_246 != ::add_ln52_1
-::tmp_6_reg_267 >= orig(::tmp_6_reg_267)
-::tmp_reg_257 >= orig(::tmp_reg_257)
+::tmp_6_reg_267 <= ::op6
+::tmp_6_reg_267 >= ::zero
+::tmp_reg_257 != ::op6
+::tmp_reg_257 != ::add_ln47
+::tmp_reg_257 != ::op13
+::tmp_reg_257 != ::op14
+::tmp_reg_257 >= ::zero
 ::op5_3 != ::op6_3
 ::op5_3 != ::op6
 ::op5_3 != ::op6_1
@@ -3586,7 +3759,12 @@ return == 0
 ::op5_3 != ::op14
 ::op5_3 != orig(::op5_1)
 ::op5_3 != orig(::op5_3)
-::op6 >= orig(::op5_1_reg_262)
+::op5_3 != orig(::icmp_ln27)
+::op6 >= ::zero
+::op6 >= orig(::icmp_ln16)
+::op6 >= orig(::icmp_ln27)
+::zero <= orig(::icmp_ln16)
+::zero <= orig(::icmp_ln27)
 ::GG1 - ::op5_1_reg_262 + ::op5_reg_246 == 0
 ::op7 + ::add_ln49 - ::op14 == 0
 ::op13 + ::op14 - ::add_ln52_1 == 0
@@ -3595,10 +3773,13 @@ return == 0
 ::op3_reg_272 == ::op6_3_reg_277
 ::op3_reg_272 == ::op7_reg_282
 ::op3_reg_272 == ::op8_reg_287
+::op3_reg_272 == ::zero
 ::op4_reg_239 == ::op4
 ::op5_1_reg_262 == ::op5_1
 ::op5_2_reg_251 == ::op5_2
 ::op5_reg_246 == ::op5
+::tmp_6_reg_267 == ::icmp_ln27
+::tmp_reg_257 == ::icmp_ln16
 ::ap_clk == 1
 ::ap_done == 0
 ::ap_idle == 0
@@ -3657,8 +3838,6 @@ return == 0
 ::tmp_6_reg_267 one of { 0, 1 }
 ::tmp_fu_124_p2 == 0
 ::tmp_reg_257 one of { 0, 1 }
-::icmp_ln16 one of { 0, 1 }
-::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
 ::G1 != ::op5_2_reg_251
@@ -3721,6 +3900,7 @@ return == 0
 ::i2 != ::op4_reg_239
 ::i2 != ::op5_1_reg_262
 ::i2 != ::op5_reg_246
+::i2 != ::tmp_6_reg_267
 ::i2 != ::op6_3
 ::i2 != ::op8
 ::i2 != ::op6
@@ -3741,6 +3921,7 @@ return == 0
 ::i4 != ::op4_reg_239
 ::i4 != ::op5_2_reg_251
 ::op5_2_reg_251 % ::i4 == 0
+::i4 != ::tmp_reg_257
 ::i4 != ::op5_3
 ::i4 != ::op6_3
 ::i4 != ::op7
@@ -3759,6 +3940,7 @@ return == 0
 ::i6 != ::add_ln52_1
 ::o1 != ::op4_reg_239
 ::o1 != ::op5_1_reg_262
+::o1 != ::tmp_reg_257
 ::o1 != ::op6_3
 ::o1 != ::op7
 ::o1 != ::op8
@@ -3787,6 +3969,8 @@ return == 0
 ::o4 != ::op6_5
 ::o4 != ::add_ln49
 ::o4 != ::op14
+::op3_reg_272 <= ::tmp_6_reg_267
+::op3_reg_272 <= ::tmp_reg_257
 ::op3_reg_272 <= ::op6
 ::op4_reg_239 != ::op5_reg_246
 ::op4_reg_239 != ::op7
@@ -3817,6 +4001,11 @@ return == 0
 ::op5_reg_246 != ::add_ln47
 ::op5_reg_246 != ::op14
 ::op5_reg_246 != ::add_ln52_1
+::tmp_6_reg_267 <= ::op6
+::tmp_reg_257 != ::op6
+::tmp_reg_257 != ::add_ln47
+::tmp_reg_257 != ::op13
+::tmp_reg_257 != ::op14
 ::op5_3 != ::op6_3
 ::op5_3 != ::op6
 ::op5_3 != ::op6_1
@@ -3915,12 +4104,14 @@ return == 0
 ::tmp1_fu_189_p2 == orig(::tmp1_fu_189_p2)
 ::tmp2_fu_199_p2 == orig(::tmp2_fu_199_p2)
 ::tmp_6_fu_141_p2 == orig(::tmp_6_fu_141_p2)
+::tmp_6_reg_267 == ::icmp_ln27
 ::tmp_6_reg_267 == orig(::tmp_6_reg_267)
+::tmp_6_reg_267 == orig(::icmp_ln27)
 ::tmp_fu_124_p2 == orig(::tmp_fu_124_p2)
+::tmp_reg_257 == ::icmp_ln16
 ::tmp_reg_257 == orig(::tmp_reg_257)
-::icmp_ln16 == orig(::icmp_ln16)
+::tmp_reg_257 == orig(::icmp_ln16)
 ::op5_3 == orig(::op5_3)
-::icmp_ln27 == orig(::icmp_ln27)
 ::op6 == orig(::op6)
 ::op6_1 == orig(::op6_1)
 ::op6_2 == orig(::op6_2)
@@ -3933,6 +4124,11 @@ return == 0
 ::add_ln52 == orig(::add_ln52)
 ::add_ln52_1 == orig(::add_ln52_1)
 ::add_ln52_2 == orig(::add_ln52_2)
+::zero == orig(::op3_reg_272)
+::zero == orig(::op6_3_reg_277)
+::zero == orig(::op7_reg_282)
+::zero == orig(::op8_reg_287)
+::zero == orig(::zero)
 ::ap_clk == 1
 ::ap_done == 0
 ::ap_idle == 0
@@ -3990,10 +4186,9 @@ return == 0
 ::tmp_6_reg_267 one of { 0, 1 }
 ::tmp_fu_124_p2 == 0
 ::tmp_reg_257 one of { 0, 1 }
-::icmp_ln16 one of { 0, 1 }
-::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
+::zero == 0
 ::G1 != ::op5_2_reg_251
 ::G1 != ::op5_3
 ::G1 != ::op6_3
@@ -4062,13 +4257,14 @@ return == 0
 ::i2 != ::op5_1_reg_262
 ::i2 != ::op5_reg_246
 ::i2 != ::op8_reg_287
+::i2 != ::tmp_6_reg_267
 ::i2 != ::op6
 ::i2 != ::op6_1
 ::i2 != ::op6_2
 ::i2 != ::op6_4
 ::i2 != ::op6_5
 ::i2 != ::add_ln52_1
-::i2 != orig(::op3_reg_272)
+::i2 != ::zero
 ::i2 != orig(::op6_3)
 ::i2 != orig(::op8)
 ::i3 != ::op5_1_reg_262
@@ -4085,13 +4281,14 @@ return == 0
 ::op5_2_reg_251 % ::i4 == 0
 ::op6_3_reg_277 % ::i4 == 0
 ::op7_reg_282 % ::i4 == 0
+::i4 != ::tmp_reg_257
 ::i4 != ::op5_3
 ::i4 < ::op6
 ::i4 != ::add_ln47
 ::i4 != ::op13
 ::i4 != ::op14
 ::i4 != ::add_ln52_1
-::i4 != orig(::op3_reg_272)
+::i4 != ::zero
 ::i4 != orig(::op6_3)
 ::i4 != orig(::op7)
 ::i6 != ::op4_reg_239
@@ -4107,6 +4304,7 @@ return == 0
 ::o1 != ::op5_1_reg_262
 ::o1 != ::op7_reg_282
 ::o1 != ::op8_reg_287
+::o1 != ::tmp_reg_257
 ::o1 != ::op6_3
 ::o1 != ::op6
 ::o1 != ::op13
@@ -4182,6 +4380,13 @@ return == 0
 ::op8_reg_287 != ::add_ln52_1
 ::op8_reg_287 != orig(::op7)
 ::op8_reg_287 != orig(::op8)
+::tmp_6_reg_267 <= ::op6
+::tmp_6_reg_267 >= ::zero
+::tmp_reg_257 != ::op6
+::tmp_reg_257 != ::add_ln47
+::tmp_reg_257 != ::op13
+::tmp_reg_257 != ::op14
+::tmp_reg_257 >= ::zero
 ::op5_3 != ::op6
 ::op5_3 != ::op6_1
 ::op5_3 != ::op6_2
@@ -4192,19 +4397,22 @@ return == 0
 ::op5_3 != ::add_ln49
 ::op5_3 != ::op14
 ::op5_3 != orig(::op6_3)
-::op6 >= orig(::op3_reg_272)
+::op6 >= ::zero
 ::GG1 - ::op5_1_reg_262 + ::op5_reg_246 == 0
 ::op13 + ::op14 - ::add_ln52_1 == 0
 ::add_ln49 - ::op14 + orig(::op7) == 0
 ===========================================================================
 ..state4():::ENTER
 ::op13_reg_292 == ::op14_reg_298
+::op13_reg_292 == ::zero
 ::op4_reg_239 == ::op4
 ::op5_1_reg_262 == ::op5_1
 ::op5_2_reg_251 == ::op5_2
 ::op5_reg_246 == ::op5
 ::op7_reg_282 == ::op7
 ::op8_reg_287 == ::op8
+::tmp_6_reg_267 == ::icmp_ln27
+::tmp_reg_257 == ::icmp_ln16
 ::ap_clk == 1
 ::ap_done == 0
 ::ap_idle == 0
@@ -4261,8 +4469,6 @@ return == 0
 ::tmp_6_reg_267 one of { 0, 1 }
 ::tmp_fu_124_p2 == 0
 ::tmp_reg_257 one of { 0, 1 }
-::icmp_ln16 one of { 0, 1 }
-::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
 ::G1 != ::op5_2_reg_251
@@ -4318,6 +4524,7 @@ return == 0
 ::i2 != ::op5_1_reg_262
 ::i2 != ::op5_reg_246
 ::i2 != ::op8_reg_287
+::i2 != ::tmp_6_reg_267
 ::i2 != ::op6
 ::i2 != ::op6_1
 ::i2 != ::op6_2
@@ -4337,6 +4544,7 @@ return == 0
 ::op5_2_reg_251 % ::i4 == 0
 ::op6_3_reg_277 % ::i4 == 0
 ::op7_reg_282 % ::i4 == 0
+::i4 != ::tmp_reg_257
 ::i4 != ::op5_3
 ::i4 < ::op6
 ::i4 != ::add_ln47
@@ -4355,6 +4563,7 @@ return == 0
 ::o1 != ::op5_1_reg_262
 ::o1 != ::op7_reg_282
 ::o1 != ::op8_reg_287
+::o1 != ::tmp_reg_257
 ::o1 != ::op6_3
 ::o1 != ::op6
 ::o1 != ::op13
@@ -4378,6 +4587,8 @@ return == 0
 ::o4 != ::op6_5
 ::o4 != ::add_ln49
 ::o4 != ::op14
+::op13_reg_292 <= ::tmp_6_reg_267
+::op13_reg_292 <= ::tmp_reg_257
 ::op13_reg_292 <= ::op6
 ::op4_reg_239 != ::op5_reg_246
 ::op4_reg_239 != ::op6
@@ -4414,6 +4625,11 @@ return == 0
 ::op8_reg_287 != ::op13
 ::op8_reg_287 != ::op14
 ::op8_reg_287 != ::add_ln52_1
+::tmp_6_reg_267 <= ::op6
+::tmp_reg_257 != ::op6
+::tmp_reg_257 != ::add_ln47
+::tmp_reg_257 != ::op13
+::tmp_reg_257 != ::op14
 ::op5_3 != ::op6
 ::op5_3 != ::op6_1
 ::op5_3 != ::op6_2
@@ -4516,17 +4732,22 @@ return == 0
 ::tmp1_fu_189_p2 == orig(::tmp1_fu_189_p2)
 ::tmp2_fu_199_p2 == orig(::tmp2_fu_199_p2)
 ::tmp_6_fu_141_p2 == orig(::tmp_6_fu_141_p2)
+::tmp_6_reg_267 == ::icmp_ln27
 ::tmp_6_reg_267 == orig(::tmp_6_reg_267)
+::tmp_6_reg_267 == orig(::icmp_ln27)
 ::tmp_fu_124_p2 == orig(::tmp_fu_124_p2)
+::tmp_reg_257 == ::icmp_ln16
 ::tmp_reg_257 == orig(::tmp_reg_257)
-::icmp_ln16 == orig(::icmp_ln16)
+::tmp_reg_257 == orig(::icmp_ln16)
 ::op5_3 == orig(::op5_3)
-::icmp_ln27 == orig(::icmp_ln27)
 ::op3 == orig(::op3)
 ::op6_3 == orig(::op6_3)
 ::add_ln52 == orig(::add_ln52)
 ::add_ln52_1 == orig(::add_ln52_1)
 ::add_ln52_2 == orig(::add_ln52_2)
+::zero == orig(::op13_reg_292)
+::zero == orig(::op14_reg_298)
+::zero == orig(::zero)
 ::ap_clk == 1
 ::ap_done == 0
 ::ap_idle == 0
@@ -4582,10 +4803,9 @@ return == 0
 ::tmp_6_reg_267 one of { 0, 1 }
 ::tmp_fu_124_p2 == 0
 ::tmp_reg_257 one of { 0, 1 }
-::icmp_ln16 one of { 0, 1 }
-::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
+::zero == 0
 ::G1 != ::op13_reg_292
 ::G1 != ::op5_2_reg_251
 ::G1 != ::op5_3
@@ -4661,10 +4881,11 @@ return == 0
 ::i2 != ::op5_1_reg_262
 ::i2 != ::op5_reg_246
 ::i2 != ::op8_reg_287
+::i2 != ::tmp_6_reg_267
 ::i2 < ::op6
 ::i2 != ::add_ln49
 ::i2 != ::add_ln52_1
-::i2 != orig(::op13_reg_292)
+::i2 != ::zero
 ::i2 != orig(::op6)
 ::i2 != orig(::op6_1)
 ::i2 != orig(::op6_2)
@@ -4686,10 +4907,11 @@ return == 0
 ::op5_2_reg_251 % ::i4 == 0
 ::op6_3_reg_277 % ::i4 == 0
 ::op7_reg_282 % ::i4 == 0
+::i4 != ::tmp_reg_257
 ::i4 != ::op5_3
 ::i4 < ::op6
 ::i4 != ::add_ln52_1
-::i4 != orig(::op13_reg_292)
+::i4 != ::zero
 ::i4 < orig(::op6)
 ::i4 != orig(::add_ln47)
 ::i4 != orig(::op13)
@@ -4709,6 +4931,7 @@ return == 0
 ::o1 != ::op5_1_reg_262
 ::o1 != ::op7_reg_282
 ::o1 != ::op8_reg_287
+::o1 != ::tmp_reg_257
 ::o1 != ::op6_3
 ::o1 < ::op6
 ::o1 != ::op6_4
@@ -4753,6 +4976,8 @@ return == 0
 ::op13_reg_292 != ::op6_3_reg_277
 ::op13_reg_292 != ::op7_reg_282
 ::op13_reg_292 != ::op8_reg_287
+::op13_reg_292 != ::tmp_6_reg_267
+::op13_reg_292 != ::tmp_reg_257
 ::op13_reg_292 != ::op5_3
 ::op13_reg_292 != ::op3
 ::op13_reg_292 != ::op6_1
@@ -4760,20 +4985,22 @@ return == 0
 ::op13_reg_292 != ::op6_4
 ::op13_reg_292 != ::op6_5
 ::op13_reg_292 != ::add_ln52_1
-::op13_reg_292 != orig(::op13_reg_292)
+::op13_reg_292 != ::zero
 ::op13_reg_292 != orig(::add_ln49)
 ::op13_reg_292 != orig(::op14)
 ::op14_reg_298 != ::op3_reg_272
 ::op14_reg_298 != ::op4_reg_239
 ::op14_reg_298 != ::op5_2_reg_251
 ::op14_reg_298 != ::op6_3_reg_277
+::op14_reg_298 != ::tmp_6_reg_267
+::op14_reg_298 != ::tmp_reg_257
 ::op14_reg_298 != ::op5_3
 ::op14_reg_298 != ::op3
 ::op14_reg_298 != ::op6
 ::op14_reg_298 != ::op6_1
 ::op14_reg_298 != ::op6_2
 ::op14_reg_298 != ::add_ln52_1
-::op14_reg_298 != orig(::op13_reg_292)
+::op14_reg_298 != ::zero
 ::op14_reg_298 != orig(::op6)
 ::op14_reg_298 != orig(::op6_5)
 ::op14_reg_298 != orig(::add_ln47)
@@ -4836,6 +5063,17 @@ return == 0
 ::op8_reg_287 != orig(::add_ln47)
 ::op8_reg_287 != orig(::op13)
 ::op8_reg_287 != orig(::op14)
+::tmp_6_reg_267 < ::op6
+::tmp_6_reg_267 != ::add_ln47
+::tmp_6_reg_267 >= ::zero
+::tmp_6_reg_267 <= orig(::op6)
+::tmp_reg_257 < ::op6
+::tmp_reg_257 != ::add_ln47
+::tmp_reg_257 >= ::zero
+::tmp_reg_257 != orig(::op6)
+::tmp_reg_257 != orig(::add_ln47)
+::tmp_reg_257 != orig(::op13)
+::tmp_reg_257 != orig(::op14)
 ::op5_3 != ::op6_4
 ::op5_3 != ::add_ln49
 ::op5_3 != orig(::op6)
@@ -4857,7 +5095,7 @@ return == 0
 ::op6 != ::op6_1
 ::op6 != ::op6_4
 ::op6 != ::add_ln49
-::op6 > orig(::op13_reg_292)
+::op6 > ::zero
 ::op6 != orig(::op6_1)
 ::op6 != orig(::op6_4)
 ::op6 != orig(::add_ln49)
@@ -4877,7 +5115,7 @@ return == 0
 ::op6_5 != orig(::op13)
 ::add_ln47 != ::add_ln49
 ::add_ln47 != ::add_ln52_1
-::add_ln47 != orig(::op13_reg_292)
+::add_ln47 != ::zero
 ::add_ln47 != orig(::op6_1)
 ::add_ln47 != orig(::op6_2)
 ::add_ln47 != orig(::add_ln47)
@@ -4890,6 +5128,7 @@ return == 0
 ::add_ln49 != orig(::op13)
 ::add_ln49 != orig(::add_ln49)
 ::add_ln49 != orig(::op14)
+::zero <= orig(::op6)
 ::G1 + ::op6_5 - ::add_ln47 == 0
 ::GG1 - ::op5_1_reg_262 + ::op5_reg_246 == 0
 ::i6 + ::op8_reg_287 - ::add_ln49 == 0
@@ -4898,6 +5137,7 @@ return == 0
 ::add_ln52_1 - orig(::op13) - orig(::op14) == 0
 ===========================================================================
 ..state5():::ENTER
+::ap_return == ::zero
 ::op13_reg_292 == ::op13
 ::op14_reg_298 == ::op14
 ::op4_reg_239 == ::op4
@@ -4906,6 +5146,8 @@ return == 0
 ::op5_reg_246 == ::op5
 ::op7_reg_282 == ::op7
 ::op8_reg_287 == ::op8
+::tmp_6_reg_267 == ::icmp_ln27
+::tmp_reg_257 == ::icmp_ln16
 ::ap_clk == 1
 ::ap_done == 0
 ::ap_idle == 0
@@ -4961,8 +5203,6 @@ return == 0
 ::tmp_6_reg_267 one of { 0, 1 }
 ::tmp_fu_124_p2 == 0
 ::tmp_reg_257 one of { 0, 1 }
-::icmp_ln16 one of { 0, 1 }
-::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
 ::G1 != ::op13_reg_292
@@ -5007,6 +5247,8 @@ return == 0
 ::ap_return != ::i4
 ::ap_return != ::op13_reg_292
 ::ap_return != ::op14_reg_298
+::ap_return <= ::tmp_6_reg_267
+::ap_return <= ::tmp_reg_257
 ::ap_return < ::op6
 ::ap_return != ::add_ln47
 ::i1 != ::op14_reg_298
@@ -5021,6 +5263,7 @@ return == 0
 ::i2 != ::op5_1_reg_262
 ::i2 != ::op5_reg_246
 ::i2 != ::op8_reg_287
+::i2 != ::tmp_6_reg_267
 ::i2 < ::op6
 ::i2 != ::add_ln49
 ::i2 != ::add_ln52_1
@@ -5035,6 +5278,7 @@ return == 0
 ::op5_2_reg_251 % ::i4 == 0
 ::op6_3_reg_277 % ::i4 == 0
 ::op7_reg_282 % ::i4 == 0
+::i4 != ::tmp_reg_257
 ::i4 != ::op5_3
 ::i4 < ::op6
 ::i4 != ::add_ln52_1
@@ -5050,6 +5294,7 @@ return == 0
 ::o1 != ::op5_1_reg_262
 ::o1 != ::op7_reg_282
 ::o1 != ::op8_reg_287
+::o1 != ::tmp_reg_257
 ::o1 != ::op6_3
 ::o1 < ::op6
 ::o1 != ::op6_4
@@ -5081,6 +5326,8 @@ return == 0
 ::op13_reg_292 != ::op6_3_reg_277
 ::op13_reg_292 != ::op7_reg_282
 ::op13_reg_292 != ::op8_reg_287
+::op13_reg_292 != ::tmp_6_reg_267
+::op13_reg_292 != ::tmp_reg_257
 ::op13_reg_292 != ::op5_3
 ::op13_reg_292 != ::op3
 ::op13_reg_292 != ::op6_1
@@ -5092,6 +5339,8 @@ return == 0
 ::op14_reg_298 != ::op4_reg_239
 ::op14_reg_298 != ::op5_2_reg_251
 ::op14_reg_298 != ::op6_3_reg_277
+::op14_reg_298 != ::tmp_6_reg_267
+::op14_reg_298 != ::tmp_reg_257
 ::op14_reg_298 != ::op5_3
 ::op14_reg_298 != ::op3
 ::op14_reg_298 != ::op6
@@ -5126,6 +5375,10 @@ return == 0
 ::op7_reg_282 != ::add_ln52_1
 ::op8_reg_287 != ::op6_5
 ::op8_reg_287 != ::add_ln52_1
+::tmp_6_reg_267 < ::op6
+::tmp_6_reg_267 != ::add_ln47
+::tmp_reg_257 < ::op6
+::tmp_reg_257 != ::add_ln47
 ::op5_3 != ::op6_4
 ::op5_3 != ::add_ln49
 ::op3 != ::op6
@@ -5243,12 +5496,14 @@ return == 0
 ::tmp1_fu_189_p2 == orig(::tmp1_fu_189_p2)
 ::tmp2_fu_199_p2 == orig(::tmp2_fu_199_p2)
 ::tmp_6_fu_141_p2 == orig(::tmp_6_fu_141_p2)
+::tmp_6_reg_267 == ::icmp_ln27
 ::tmp_6_reg_267 == orig(::tmp_6_reg_267)
+::tmp_6_reg_267 == orig(::icmp_ln27)
 ::tmp_fu_124_p2 == orig(::tmp_fu_124_p2)
+::tmp_reg_257 == ::icmp_ln16
 ::tmp_reg_257 == orig(::tmp_reg_257)
-::icmp_ln16 == orig(::icmp_ln16)
+::tmp_reg_257 == orig(::icmp_ln16)
 ::op5_3 == orig(::op5_3)
-::icmp_ln27 == orig(::icmp_ln27)
 ::op3 == orig(::op3)
 ::op6_3 == orig(::op6_3)
 ::op6 == orig(::op6)
@@ -5260,6 +5515,8 @@ return == 0
 ::add_ln49 == orig(::add_ln49)
 ::add_ln52 == orig(::add_ln52)
 ::add_ln52_2 == orig(::add_ln52_2)
+::zero == orig(::ap_return)
+::zero == orig(::zero)
 ::ap_clk == 1
 ::ap_done == 1
 ::ap_idle == 0
@@ -5314,10 +5571,9 @@ return == 0
 ::tmp_6_reg_267 one of { 0, 1 }
 ::tmp_fu_124_p2 == 0
 ::tmp_reg_257 one of { 0, 1 }
-::icmp_ln16 one of { 0, 1 }
-::icmp_ln27 one of { 0, 1 }
 ::add_ln52 == 0
 ::add_ln52_2 == 0
+::zero == 0
 ::G1 != ::ap_return
 ::G1 < ::o1
 ::G1 <= ::o2
@@ -5411,9 +5667,10 @@ return == 0
 ::i2 != ::op5_1_reg_262
 ::i2 != ::op5_reg_246
 ::i2 != ::op8_reg_287
+::i2 != ::tmp_6_reg_267
 ::i2 < ::op6
 ::i2 != ::add_ln49
-::i2 != orig(::ap_return)
+::i2 != ::zero
 ::i2 != orig(::add_ln52_1)
 ::i3 < ::o1
 ::i3 != ::o2
@@ -5430,9 +5687,10 @@ return == 0
 ::op5_2_reg_251 % ::i4 == 0
 ::op6_3_reg_277 % ::i4 == 0
 ::op7_reg_282 % ::i4 == 0
+::i4 != ::tmp_reg_257
 ::i4 != ::op5_3
 ::i4 < ::op6
-::i4 != orig(::ap_return)
+::i4 != ::zero
 ::i4 != orig(::add_ln52_1)
 ::i6 <= ::o1
 ::i6 <= ::o2
@@ -5455,13 +5713,15 @@ return == 0
 ::o1 != ::op6_3_reg_277
 ::o1 != ::op7_reg_282
 ::o1 != ::op8_reg_287
+::o1 > ::tmp_6_reg_267
+::o1 > ::tmp_reg_257
 ::o1 != ::op5_3
 ::o1 != ::op3
 ::o1 != ::op6_1
 ::o1 != ::op6_2
 ::o1 != ::op6_4
 ::o1 != ::op6_5
-::o1 > orig(::ap_return)
+::o1 > ::zero
 ::o1 != orig(::o1)
 ::o1 != orig(::o2)
 ::o1 != orig(::add_ln52_1)
@@ -5474,13 +5734,15 @@ return == 0
 ::o2 != ::op5_2_reg_251
 ::o2 != ::op6_3_reg_277
 ::o2 != ::op8_reg_287
+::o2 > ::tmp_6_reg_267
+::o2 > ::tmp_reg_257
 ::o2 != ::op5_3
 ::o2 != ::op3
 ::o2 != ::op6_3
 ::o2 != ::op6
 ::o2 != ::op6_1
 ::o2 != ::op6_2
-::o2 > orig(::ap_return)
+::o2 > ::zero
 ::o2 != orig(::o1)
 ::o2 > orig(::o2)
 ::o2 != orig(::add_ln52_1)
@@ -5503,25 +5765,29 @@ return == 0
 ::op13_reg_292 != ::op6_3_reg_277
 ::op13_reg_292 != ::op7_reg_282
 ::op13_reg_292 != ::op8_reg_287
+::op13_reg_292 != ::tmp_6_reg_267
+::op13_reg_292 != ::tmp_reg_257
 ::op13_reg_292 != ::op5_3
 ::op13_reg_292 != ::op3
 ::op13_reg_292 != ::op6_1
 ::op13_reg_292 != ::op6_2
 ::op13_reg_292 != ::op6_4
 ::op13_reg_292 != ::op6_5
-::op13_reg_292 != orig(::ap_return)
+::op13_reg_292 != ::zero
 ::op13_reg_292 != orig(::o1)
 ::op13_reg_292 != orig(::add_ln52_1)
 ::op14_reg_298 != ::op3_reg_272
 ::op14_reg_298 != ::op4_reg_239
 ::op14_reg_298 != ::op5_2_reg_251
 ::op14_reg_298 != ::op6_3_reg_277
+::op14_reg_298 != ::tmp_6_reg_267
+::op14_reg_298 != ::tmp_reg_257
 ::op14_reg_298 != ::op5_3
 ::op14_reg_298 != ::op3
 ::op14_reg_298 != ::op6
 ::op14_reg_298 != ::op6_1
 ::op14_reg_298 != ::op6_2
-::op14_reg_298 != orig(::ap_return)
+::op14_reg_298 != ::zero
 ::op14_reg_298 != orig(::o1)
 ::op14_reg_298 != orig(::o2)
 ::op14_reg_298 != orig(::add_ln52_1)
@@ -5559,6 +5825,13 @@ return == 0
 ::op8_reg_287 != ::op6_5
 ::op8_reg_287 != orig(::o1)
 ::op8_reg_287 != orig(::add_ln52_1)
+::tmp_6_reg_267 < ::op6
+::tmp_6_reg_267 != ::add_ln47
+::tmp_6_reg_267 >= ::zero
+::tmp_reg_257 < ::op6
+::tmp_reg_257 != ::add_ln47
+::tmp_reg_257 >= ::zero
+::tmp_reg_257 != orig(::o1)
 ::op5_3 != ::op6_4
 ::op5_3 != ::add_ln49
 ::op5_3 != orig(::o2)
@@ -5573,7 +5846,7 @@ return == 0
 ::op6 != ::op6_1
 ::op6 != ::op6_4
 ::op6 != ::add_ln49
-::op6 > orig(::ap_return)
+::op6 > ::zero
 ::op6 > orig(::o1)
 ::op6 > orig(::o2)
 ::op6_1 != ::add_ln49
@@ -5584,7 +5857,7 @@ return == 0
 ::op6_5 != orig(::o1)
 ::op6_5 != orig(::add_ln52_1)
 ::add_ln47 != ::add_ln49
-::add_ln47 != orig(::ap_return)
+::add_ln47 != ::zero
 ::add_ln47 != orig(::add_ln52_1)
 ::add_ln49 != orig(::o1)
 ::add_ln49 != orig(::add_ln52_1)
