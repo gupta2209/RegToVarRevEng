@@ -1,16 +1,19 @@
 state1 :
+::out30_i == ::out30
 ::icmp_ln13_fu_241_p2 == ::icmp_ln13
-::icmp_ln13_fu_241_p2 == ::zero
 ::icmp_ln18_reg_360 == ::icmp_ln18
 ::sub_ln11_reg_351 == ::sub_ln11
+::t16_0_reg_207 == ::t16
+::t16_0_reg_207 == ::t16_0
 ::t23_reg_365 == ::t23
 ::t26_1_reg_370 == ::t26_1
 _______________________________________________
 state2 :
-::out30_i == ::icmp_ln13
-::out30_i == ::zero
 ::out30_o == ::add_ln28
 ::out30_o == ::out30
+::ap_phi_mux_t16_0_phi_fu_210_p4 == ::t16
+::icmp_ln13_fu_241_p2 == ::icmp_ln13
+::icmp_ln13_fu_241_p2 == ::zero
 ::icmp_ln18_reg_360 == ::icmp_ln18
 ::sub_ln11_reg_351 == ::sub_ln11
 ::t16_1_reg_380 == ::t16_1
@@ -21,12 +24,11 @@ state3 :
 ::ap_return == ::add_ln31_1
 ::out30_o == ::add_ln28
 ::out30_o == ::out30
-::ap_phi_mux_t16_0_phi_fu_210_p4 == ::t16_1
 ::ap_phi_mux_t16_0_phi_fu_210_p4 == ::t16_0
 ::icmp_ln13_fu_241_p2 == ::icmp_ln13
-::icmp_ln13_fu_241_p2 == ::zero
 ::icmp_ln18_reg_360 == ::icmp_ln18
 ::sub_ln11_reg_351 == ::sub_ln11
+::t16_1_reg_380 == ::t16_1
 ::t23_reg_365 == ::t23
 ::t26_1_reg_370 == ::t26_1
 _______________________________________________

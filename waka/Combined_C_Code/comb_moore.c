@@ -37,6 +37,12 @@ long long int out31_ap_vld;
 long long int ap_CS_fsm_state1;
 long long int ap_CS_fsm_state2;
 long long int ap_CS_fsm_state3;
+long long int add_ln12_fu_229_p2;
+long long int add_ln21_fu_253_p2;
+long long int add_ln26_fu_265_p2;
+long long int add_ln28_fu_303_p2;
+long long int add_ln30_fu_309_p2;
+long long int add_ln31_fu_315_p2;
 long long int ap_CS_fsm;
 long long int ap_NS_fsm;
 long long int ap_phi_mux_t16_0_phi_fu_210_p4;
@@ -44,11 +50,22 @@ long long int icmp_ln13_fu_241_p2;
 long long int icmp_ln13_reg_356;
 long long int icmp_ln18_fu_247_p2;
 long long int icmp_ln18_reg_360;
+long long int icmp_ln18_reg_360_temp_0;
+long long int sub_ln11_fu_222_p2;
 long long int sub_ln11_reg_351;
+long long int t11_fu_235_p2;
 long long int t16_0_reg_207;
+long long int t16_1_fu_298_p2;
 long long int t16_1_reg_380;
+long long int t16_fu_277_p2;
+long long int t23_fu_259_p2;
 long long int t23_reg_365;
+long long int t25_fu_283_p2;
+long long int t26_1_fu_271_p2;
 long long int t26_1_reg_370;
+long long int t26_2_fu_292_p3;
+long long int t26_fu_287_p2;
+long long int t5_fu_216_p2;
 
 long long int t25; 
 long long int t23; 
@@ -96,7 +113,7 @@ void state1(){
     if(!(1 == ap_CS_fsm_state3)){
     	out31_ap_vld = 0 ; 
     }
-    icmp_ln13_fu_241_p2 =   in2  == in1  ? zero+1 : zero ;
+    icmp_ln13_fu_241_p2 =   (in2  == in1)  ? zero+1 : zero ;
     if((ap_start == 0) && (1 == ap_CS_fsm_state1))
     {
         ap_idle =  1;
@@ -104,7 +121,7 @@ void state1(){
    if((((ap_start == 1) && (icmp_ln13_fu_241_p2 == zero+1)) && (1 == ap_CS_fsm_state1)) == 1){
        if(((ap_start == 1) && (icmp_ln13_fu_241_p2 == zero+1)) && (1 == ap_CS_fsm_state1))
     {
-        t16_0_reg_207 =   in7  +  in12  +  in8  -  in17 ;
+        t16_0_reg_207 =   in7  +  in12  +  in8  - in17 ;
     }
     if((ap_start == 1) && (1 == ap_CS_fsm_state1))
     {
@@ -115,7 +132,7 @@ void state1(){
     {
         t26_1_reg_370 =    in19  + in20  +   in3  -  in4 ;
         t23_reg_365 =    in3  - in4  +  in22  +  in7  +  in12  +  in8 ;
-        icmp_ln18_reg_360 =   in9  < in10  ? zero+1 : zero ;
+        icmp_ln18_reg_360 =   (in9  < in10)  ? zero+1 : zero ;
     }
        //goto ap_ST_fsm_state3;
    }
@@ -127,13 +144,13 @@ void state1(){
     if((ap_start == 1) && (1 == ap_CS_fsm_state1))
     {
             sub_ln11_reg_351 =   in14 - in15  ;
-        	icmp_ln13_reg_356 =   in2   == in1  ? zero+1 : zero ;
+        	icmp_ln13_reg_356 =   (in2 == in1)  ? zero+1 : zero ;
     }
     if(((ap_start == 1) && (icmp_ln13_fu_241_p2 == zero)) && (1 == ap_CS_fsm_state1))
     {
             t26_1_reg_370 =    in19  + in20  +   in3  -  in4 ;
 		    t23_reg_365 =    in3  - in4  +  in22  +  in7  +  in12  +  in8 ;
-		    icmp_ln18_reg_360 =   in9  < in10  ? zero+1 : zero ;
+		    icmp_ln18_reg_360 =   (in9  < in10)  ? zero+1 : zero ;
     }
        //goto ap_ST_fsm_state2;
    }
@@ -143,10 +160,10 @@ void state1(){
 	sub_ln11 = in14 - in15; //%sub_ln11 = sub nsw i32 %in14, %in15
 	add_ln12 = in7 + in12; //%add_ln12 = add i32 %in7, %in12
 	t11 = add_ln12 + in8; //%t11 = add i32 %add_ln12, %in8
-	icmp_ln13 = in2 == in1 ? zero+1 : zero; //%icmp_ln13 = icmp eq i32 %in2, %in1
+	icmp_ln13 = (in2 == in1) ? zero+1 : zero; //%icmp_ln13 = icmp eq i32 %in2, %in1
 	//br i1 %icmp_ln13, label %1, label %_ifconv
 	if(!icmp_ln13){
-		icmp_ln18 = in9 < in10 ? zero+1 : zero; //%icmp_ln18 = icmp slt i32 %in9, %in10
+		icmp_ln18 = (in9 < in10) ? zero+1 : zero; //%icmp_ln18 = icmp slt i32 %in9, %in10
 		add_ln21 = t5 + in22; //%add_ln21 = add i32 %t5, %in22
 		t23 = add_ln21 + t11; //%t23 = add i32 %add_ln21, %t11
 		add_ln26 = in19 + in20; //%add_ln26 = add i32 %in19, %in20
@@ -159,6 +176,13 @@ void state1(){
 		//goto state3;
 	}
 	//goto state2;
+	if(t16_0_reg_207 != t16){
+		printf("three %lld %lld ",t16_0_reg_207,t16);
+	}else if(t26_1_reg_370 != t26_1){
+		printf("one ");
+	}else if(t23_reg_365 != t23){
+		printf("two ");
+	}
 }
 
 void state2(){
@@ -301,6 +325,12 @@ void hls_macc(long long int *ap_clk__1,long long int *ap_done__1,long long int *
    ap_CS_fsm_state1=0;
    ap_CS_fsm_state2=0;
    ap_CS_fsm_state3=0;
+   add_ln12_fu_229_p2=0;
+   add_ln21_fu_253_p2=0;
+   add_ln26_fu_265_p2=0;
+   add_ln28_fu_303_p2=0;
+   add_ln30_fu_309_p2=0;
+   add_ln31_fu_315_p2=0;
    ap_CS_fsm=0;
    ap_NS_fsm=0;
    ap_phi_mux_t16_0_phi_fu_210_p4=0;
@@ -308,11 +338,46 @@ void hls_macc(long long int *ap_clk__1,long long int *ap_done__1,long long int *
    icmp_ln13_reg_356=0;
    icmp_ln18_fu_247_p2=0;
    icmp_ln18_reg_360=0;
+   icmp_ln18_reg_360_temp_0=0;
+   sub_ln11_fu_222_p2=0;
    sub_ln11_reg_351=0;
+   t11_fu_235_p2=0;
    t16_0_reg_207=0;
+   t16_1_fu_298_p2=0;
    t16_1_reg_380=0;
+   t16_fu_277_p2=0;
+   t23_fu_259_p2=0;
    t23_reg_365=0;
+   t25_fu_283_p2=0;
+   t26_1_fu_271_p2=0;
    t26_1_reg_370=0;
+   t26_2_fu_292_p3=0;
+   t26_fu_287_p2=0;
+   t5_fu_216_p2=0;
+
+    t25=0; 
+t23=0; 
+add_ln31_1=0; 
+add_ln30=0; 
+add_ln12=0; 
+t16_1=0; 
+t26_1=0; 
+t11=0; 
+add_ln21=0; 
+t26_2=0; 
+t5=0; 
+add_ln26=0; 
+add_ln28=0;
+t16=0; 
+icmp_ln13=0; 
+t26=0; 
+add_ln31=0;
+sub_ln11=0; 
+icmp_ln18=0; 
+t16_0=0;
+out30=0; 
+zero=0;
+
     ap_done=0;
     ap_start=1;
 
@@ -387,17 +452,18 @@ void hls_macc(long long int *ap_clk__1,long long int *ap_done__1,long long int *
     *out31__1=out31;
     *out31_ap_vld__1=out31_ap_vld;
     if(add_ln31_1 == ap_return){
-        printf("T\n");
+        printf("T ");
     }else{
-        printf("F %lld %lld\n",add_ln31_1,ap_return);
+        printf("F %lld %lld ",add_ln31_1,ap_return);
     }
+    printf("%lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld \n",zero,*in1__1,*in2__1,*in3__1,*in4__1,*in7__1,*in8__1,*in9__1,*in10__1,*in12__1,*in14__1,*in15__1,*in17__1,*in19__1,*in20__1,*in22__1,*in24__1,*in27__1,*in28__1,*in29__1,*in32__1);
 	//printf("%lld ",do_twos_complement( ap_return,32));
        return;
 }
 
 
 int main(){
-	for(int i=0; i<3; i++){
+	for(int i=0; i<50; i++){
 	long long int ap_clk__1 = 1;
 	long long int ap_done__1 = 0;
 	long long int ap_idle__1 = 0;
@@ -433,7 +499,7 @@ int main(){
 	long long int out30_o_ap_vld__1 = 0;
 	long long int out31__1 = 0; 
 	long long int out31_ap_vld__1 = 0;
-    scanf("%llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu",&zero,&in1__1,&in2__1,&in3__1,&in4__1,&in7__1,&in8__1,&in9__1,&in10__1,&in12__1,&in14__1,&in15__1,&in17__1,&in19__1,&in20__1,&in22__1,&in24__1,&in27__1,&in28__1,&in29__1,&in32__1);	
+    scanf("%lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld",&zero,&in1__1,&in2__1,&in3__1,&in4__1,&in7__1,&in8__1,&in9__1,&in10__1,&in12__1,&in14__1,&in15__1,&in17__1,&in19__1,&in20__1,&in22__1,&in24__1,&in27__1,&in28__1,&in29__1,&in32__1);	
 	int dummy = 1;
 	hls_macc(&ap_clk__1,&ap_done__1,&ap_idle__1,&ap_ready__1,&ap_return__1,&ap_rst__1,&ap_start__1,&in1__1,&in2__1,&in3__1,&in4__1,&in7__1,&in8__1,&in9__1,&in10__1,&in12__1,&in14__1,&in15__1,&in17__1,&in19__1,&in20__1,&in22__1,&in24__1,&in27__1,&in28__1,&in29__1,&in32__1,&out13__1,&out13_ap_vld__1,&out30_i__1,&out30_o__1,&out30_o_ap_vld__1,&out31__1,&out31_ap_vld__1,dummy);
 }
