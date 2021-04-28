@@ -1,2 +1,0 @@
-In case of pointer we obtain same variable in both the sch c code and generated c code. In that case added '_temp' to the variables in 'aft_sch' file.
-Determine the data type of variable by seeing verbose file.
